@@ -82,9 +82,14 @@ No external APIs will be used for the first sprint.
 
 ![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/9f62a63d-e4d5-4535-afb5-88337e29f7ae)
 
+
+
 [Login page]
 
+
 ![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/abb88aa8-c46b-4f5d-8671-040bf0615f61)
+
+
 
 [Book review]
 
@@ -92,9 +97,14 @@ No external APIs will be used for the first sprint.
 
 
 [My reviews]
+
+
 ![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/03025c63-3766-4bb0-807a-13bd3de9869c)
 
+
+
 [Search result]
+
 
 ![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/2f9c7884-376c-4939-8d9b-74c8d2d52e96)
 

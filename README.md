@@ -21,7 +21,7 @@ Readers:
 ## Features
 
 1. **Find Books**:
-   - Discover new books based on genre, author, or keyword search.
+   - Discover new books based on author or keyword search.
    - View detailed information about each book, including synopsis, author details, and reader ratings.
 
 2. **Rate and Review**:
@@ -54,13 +54,13 @@ No external APIs will be used for the first sprint.
 ### Sitemap
 
 - Home page
-- Books
-- Book details
-- Register
+- Books listing page
+- Book details page
+- Register page
 - Login page
-- Book review
+- Book review submission page
 - My Reviews
-- Search esult
+- Search result page 
 
 ### Mockups
 
@@ -69,16 +69,16 @@ No external APIs will be used for the first sprint.
 ![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/b33c67a8-786a-4095-ba71-04b93bf03bab) 
 
 
-[Books]
+[Books listing page]
 
 ![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/95ec9f0b-160a-4d9a-ad3d-f2a2ef74eb35)
 
-[Book details]
+[Book details page]
 
 ![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/e02e43b4-d46c-4b72-a1bc-7952c11311e0)
 
 
-[Register]
+[Register page]
 
 ![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/9f62a63d-e4d5-4535-afb5-88337e29f7ae)
 
@@ -91,25 +91,22 @@ No external APIs will be used for the first sprint.
 
 
 
-[Book review]
+[Book review submission page]
 
 ![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/671a6ec2-59e7-4c42-b0df-21cd83e718e6)
 
 
-[My reviews]
+[My reviews ]
 
 
 ![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/03025c63-3766-4bb0-807a-13bd3de9869c)
 
 
 
-[Search result]
+[Search result page]
 
 
 ![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/2f9c7884-376c-4939-8d9b-74c8d2d52e96)
-
-
-
 
 
 
@@ -127,6 +124,9 @@ No external APIs will be used for the first sprint.
 - GET /books/:id: Retrieve detailed information about a specific book.
 - POST /reviews: Submit a review for a book.
 - GET /users/:id/reviews: Retrieve a list of reviews submitted by the user.
+- GET /search?q=: Perform a search for books by title or author.
+- POST /users/register`: Register a new user.
+- POST /users/login`: Log in an existing user
 
 ### Auth
 

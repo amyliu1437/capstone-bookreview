@@ -54,15 +54,56 @@ No external APIs will be used for the first sprint.
 ### Sitemap
 
 - Home page
-- Book listings
+- Books
 - Book details
 - Register
-- Login
-- User profile
+- Login page
+- Book review
+- My Reviews
+- Search esult
 
 ### Mockups
 
-[Mockup images]
+[Home page]
+
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/b33c67a8-786a-4095-ba71-04b93bf03bab) 
+
+
+[Books]
+
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/95ec9f0b-160a-4d9a-ad3d-f2a2ef74eb35)
+
+[Book details]
+
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/e02e43b4-d46c-4b72-a1bc-7952c11311e0)
+
+
+[Register]
+
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/9f62a63d-e4d5-4535-afb5-88337e29f7ae)
+
+[Login page]
+
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/abb88aa8-c46b-4f5d-8671-040bf0615f61)
+
+[Book review]
+
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/671a6ec2-59e7-4c42-b0df-21cd83e718e6)
+
+
+[My reviews]
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/03025c63-3766-4bb0-807a-13bd3de9869c)
+
+[Search result]
+
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/2f9c7884-376c-4939-8d9b-74c8d2d52e96)
+
+
+
+
+
+
+
 
 ### Data
 

@@ -21,7 +21,6 @@ Readers:
 ## Features
 
 1. **Find Books**:
-   - Discover new books based on author or keyword search.
    - View detailed information about each book, including synopsis, author details, and reader ratings.
 
 2. **Rate and Review**:
@@ -60,7 +59,6 @@ No external APIs will be used for the first sprint.
 - Login page
 - Book review submission page
 - My Reviews
-- Search result page 
 
 ### Mockups
 
@@ -124,7 +122,6 @@ No external APIs will be used for the first sprint.
 - GET /books/:id: Retrieve detailed information about a specific book.
 - POST /reviews: Submit a review for a book.
 - GET /users/:id/reviews: Retrieve a list of reviews submitted by the user.
-- GET /search?q=: Perform a search for books by title or author.
 - POST /users/register`: Register a new user.
 - POST /users/login`: Log in an existing user
 
@@ -137,18 +134,18 @@ JWT tokens will be stored in localStorage.
 
 1. Create client and server projects with basic routing and structure.
 2. Implement book listing and details pages.
-3. Develop user registration and login functionality.
-4. Integrate JWT authentication for secure user sessions.
-5. Implement user profile pages for managing reading history and favorite books.
-6. Add the ability for users to rate and review books.
-7. Develop a user profile page to display the user's submitted reviews.
-8. Deploy client and server projects for production use.
-9. Conduct testing and bug fixes to ensure a seamless user experience.
-10. Explore additional features such as social interactions and advanced search options.
+3. Integrate JWT authentication for secure user sessions.
+4. Add the ability for users to rate and review books.
+5. Develop a user profile page to display the user's submitted reviews.
+6. Deploy client and server projects for production use.
+7. Conduct testing and bug fixes to ensure a seamless user experience.
+8. Develop user registration and login functionality.
+9. Explore additional features such as pagin and search options.
 
 ## Nice-to-haves
 
 - Integration with external book APIs for expanded book listings.
-- Social features such as following other users and participating in reading challenges.
+- Allow user to search and upload books they want to review.
+- Add the function that user can edit his profile item.
 - Advanced recommendation algorithms based on user behavior and preferences.
 - Integration with e-book platforms for seamless access to digital reading materials.

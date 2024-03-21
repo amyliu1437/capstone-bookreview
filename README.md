@@ -118,9 +118,13 @@ No external APIs will be used for the first sprint.
 
 ### Endpoints
 
-- GET /books: Retrieve a list of books with optional filters.
+- GET /books: Retrieve a list of all books.
+- GET /books/topbooks: Retrieve a list of  top rated books.
 - GET /books/:id: Retrieve detailed information about a specific book.
+- GET /books/:id/reviews: Retrieve a list of reviews about a specific book.
 - POST /reviews: Submit a review for a book.
+- PUT /reviews/:id: Edit a review.
+- DELETE /reviews/:id: Delete a review from list.
 - GET /users/:id/reviews: Retrieve a list of reviews submitted by the user.
 - POST /users/register`: Register a new user.
 - POST /users/login`: Log in an existing user

@@ -10,7 +10,7 @@ const getReviewById = async (req, res) => {
       .select(
         "id",
         "book_id",
-        "reviewer_id",
+        "user_id",
         "review_time",
         "stars",
         "title",
@@ -33,13 +33,13 @@ const getReviewById = async (req, res) => {
 
 // Post a review to the review list
 const post = async (req, res) => {
-  const { bookId, reviewer_id, stars, title, content } = req.body; // Extract review data including bookId from request body
+  const { bookId, user_id, stars, title, content } = req.body; // Extract review data including bookId from request body
 
   try {
     // Insert the review into the database
     const newReview = await knex("reviews").insert({
       book_id: bookId,
-      reviewer_id: reviewer_id,
+      user_id: user_id,
       stars: stars,
       title: title,
       content: content
@@ -108,9 +108,38 @@ const remove = async (req, res) => {
     res.status(400).send(`Error removing review: ${err}`);
   }
 };
+
+// Get the latest review and related book info
+const latestReview = async (req, res) => {
+  try {
+    
+    const latestReviewBookInfo = await knex("reviews")
+      .select(
+        "reviews.id as review_id",
+        "reviews.stars",
+        "reviews.title as review_title",
+        "reviews.content as review_content",
+        "books.cover as book_cover"
+      )
+      .join("books", "reviews.book_id", "books.id")
+      .orderBy("reviews.review_time", "desc")
+      .first(); // Fetch only the latest review
+
+      console.log(latestReviewBookInfo);
+    if (!latestReviewBookInfo) {
+      return res.status(404).json({ error: "No reviews found" });
+    }
+
+    res.status(200).json(latestReviewBookInfo);
+  } catch (err) {
+    res.status(400).send(`Error retrieving latest review with book info: ${err}`);
+  }
+};
+
 module.exports = {
   getReviewById,
   post,
   update,
   remove,
+  latestReview,
 };

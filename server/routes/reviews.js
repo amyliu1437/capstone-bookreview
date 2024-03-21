@@ -7,6 +7,10 @@ router
     .post(reviewsController.post);
 
 router
+    .route('/latestreview')
+    .get(reviewsController.latestReview);
+
+router
     .route("/:id")
     .get(reviewsController.getReviewById)
     .put(reviewsController.update)

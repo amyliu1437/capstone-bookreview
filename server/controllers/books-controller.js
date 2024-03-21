@@ -84,7 +84,7 @@ const reviewsOfOneBook = async (req, res) => {
     const reviews = await knex("reviews")
       .select(
         "reviews.id",
-        "reviews.reviewer_id",
+        "reviews.user_id",
         "reviews.review_time",
         "reviews.stars",
         "reviews.title",

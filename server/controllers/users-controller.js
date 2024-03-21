@@ -23,7 +23,7 @@ const register= async (req, res) => {
 
   // Insert it into our database
   try {
-    await knex("reviewer").insert(newUser);
+    await knex("users").insert(newUser);
     res.status(201).send("Registered successfully" );
   } catch (error) {
     console.error(error);
@@ -43,7 +43,7 @@ const login= async (req, res) => {
   }
 
   // Find the user
-  const user = await knex("reviewer").where({ email: email }).first();
+  const user = await knex("users").where({ email: email }).first();
   if (!user) {
     return res.status(400).send("Invalid email");
   }
@@ -68,10 +68,10 @@ const login= async (req, res) => {
 
 
 const getReviewsList = async (req, res) => {
-  const reviewerId = req.params.id // Assuming reviewerId is passed as a route parameter
+  const userId = req.params.id 
 
   try {
-    // Fetch all reviews related to the reviewer
+    // Fetch all reviews related to the user
     const reviews = await knex("reviews")
       .select(
         "id",
@@ -81,10 +81,10 @@ const getReviewsList = async (req, res) => {
         "title",
         "content"
       )
-      .where("reviewer_id", reviewerId);
+      .where("user_id", userId);
 
     if (!reviews || reviews.length === 0) {
-      return res.status(404).json({ error: "No reviews found for this reviewer" });
+      return res.status(404).json({ error: "No reviews found for this " });
     }
 
     res.status(200).json(reviews);

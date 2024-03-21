@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 5050;
 const cors = require('cors');
 const booksRoutes = require('./routes/books');
 const reviewsRoutes = require('./routes/reviews');
-const reviewerRoutes = require('./routes/reviewer');
+const usersRoutes = require('./routes/users');
 
 app.use(express.json());
 
@@ -15,7 +15,7 @@ app.use(cors());
 // all inventories routes
 app.use('/books', booksRoutes);
 app.use('/reviews', reviewsRoutes);
-app.use('/users', reviewerRoutes);
+app.use('/users', usersRoutes);
 
 
 app.listen(PORT, () => {

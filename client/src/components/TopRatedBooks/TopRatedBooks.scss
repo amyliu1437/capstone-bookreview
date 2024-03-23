@@ -1,0 +1,21 @@
+@import '../../styles/global' ;
+.top-container{
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+
+.top-booklist{
+  margin: 0 32px;
+  &__list{
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
+
+    @include tablet{
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+}

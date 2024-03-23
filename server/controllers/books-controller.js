@@ -84,12 +84,13 @@ const reviewsOfOneBook = async (req, res) => {
     const reviews = await knex("reviews")
       .select(
         "reviews.id",
-        "reviews.user_id",
         "reviews.review_time",
         "reviews.stars",
         "reviews.title",
-        "reviews.content"
+        "reviews.content",
+        "users.name as user_name" // Include user name from users table
       )
+      .join("users", "reviews.user_id", "users.id")
       .where("reviews.book_id", bookId);
 
     if (!reviews || reviews.length === 0) {

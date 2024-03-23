@@ -1,0 +1,24 @@
+
+
+.banner-containner{
+  width: 100%;
+  margin: 0;
+  padding: 0 32px;
+}
+
+.hero-banner{
+  display: inline;
+  &__content{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.review{
+  display: flex;
+  flex-direction:column;
+  &__image{
+    width: 80%;
+    height: auto;
+  }
+}

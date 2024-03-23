@@ -1,0 +1,72 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: none;
+  color: black;
+}
+
+.logo {
+  flex: 1;
+}
+
+.navbar {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    text-decoration: none;
+  }
+  &__item
+    {
+      margin: 0 10px;
+      text-decoration: none;
+    }
+  
+}
+
+
+.login {
+  flex: 1;
+  text-align: right;
+
+  &__link{
+    text-decoration: none;
+  }
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: none;
+    &__mobile {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+
+  .navbar.mobile li {
+    margin: 10px 0;
+    text-align: center;
+ 
+  }
+}

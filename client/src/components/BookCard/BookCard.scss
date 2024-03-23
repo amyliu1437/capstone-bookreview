@@ -1,0 +1,50 @@
+@import '../../styles/global';
+
+.bookcard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 0;
+  width: 90%;
+
+  @include tablet {
+    width: 25%;
+    flex-direction: column;
+  }
+
+  &__image{
+    width: 50%;
+    height: auto;
+
+    @include tablet{
+      width: 90%;
+    }
+  }
+
+  &__info{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @include tablet{
+      width: 90%;
+    }
+  
+  }
+  &__title{
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  &__author{
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+
+  &__rating{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

@@ -74,14 +74,21 @@ const getReviewsList = async (req, res) => {
     // Fetch all reviews related to the user
     const reviews = await knex("reviews")
       .select(
-        "id",
-        "book_id",
-        "review_time",
-        "stars",
-        "title",
-        "content"
+        "reviews.id",
+        "reviews.book_id",
+        "reviews.review_time",
+        "reviews.stars",
+        "reviews.title as rtitle",
+        "reviews.content",
+        "books.title",
+        "books.cover",
+        "books.author",
+        "books.publisher"
       )
-      .where("user_id", userId);
+      .join("books","reviews.book_id","books.id")
+      .orderBy("reviews.review_time", "desc")
+      .where("reviews.user_id", userId)
+      .limit(10);
 
     if (!reviews || reviews.length === 0) {
       return res.status(404).json({ error: "No reviews found for this " });

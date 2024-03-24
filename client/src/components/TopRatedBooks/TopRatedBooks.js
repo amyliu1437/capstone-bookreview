@@ -16,7 +16,6 @@ function TopRatedBooks() {
       try {
         const response = await axios.get("http://localhost:8080/books/topbooks")
 
-        console.log(response)
         setTopRatedBooks(response.data);
       } catch (error) {
         console.log(error)

@@ -1,0 +1,75 @@
+@import '../../styles/global';
+
+.review-card{
+  border-top: 1px solid, gray;
+  border-bottom: 1px solid gray ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px;
+  &__image{
+    width: 30%;
+  }
+  &__content{
+    width: 68%;
+  }
+}
+
+.book{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid gray ;
+  &__title{
+    font-weight: bold;
+  }
+  &__info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  &__detail{
+    width: 30%;
+    &--bold{
+      font-weight: bold;
+    }
+  }
+
+}
+
+.review{
+  display: flex;
+  flex-direction: column;
+
+  &__info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  &__title{
+    width: 30;
+    font-weight: bold;
+    align-items: center;
+    line-height: 33px;
+    padding-left: 32px;
+  }
+
+  &__middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__control{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__button{
+    width: 45%;
+    background-color: rgb(13, 88, 85);
+    color: white;
+  }
+}

@@ -1,13 +1,30 @@
 import './Header.scss';
-import { useState } from 'react';
+import { useState, useEffect,useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const { user, setUser } = useContext(UserContext);
+  
+  const handleLogout = () => {
+    setUser(null);
+    localStorage.clear();
+  };
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user");
+    // console.log("Search from localStorage: "+loggedInUser);
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setUser(foundUser);
+    }
+  }, []);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
 
   return (
     <div className="header">
@@ -22,7 +39,9 @@ const Header = () => {
         </ul>
       </div>
       <div className="login">
-        <NavLink className="login__link" to={"/"}>Login</NavLink>
+        {user && <NavLink className="navbar__item">{user.name}</NavLink>}
+        {user && <NavLink className="login__link" onClick={handleLogout}>Logout</NavLink>}
+        {!user && <NavLink className="login__link" to={"/login"}>Login</NavLink>}
       </div>
       <div className="hamburger-menu" onClick={toggleMenu}>&#9776;</div>
     </div>

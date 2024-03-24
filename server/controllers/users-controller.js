@@ -61,7 +61,7 @@ const login= async (req, res) => {
     { expiresIn: "24h" }
   );
 
-  res.send({ token });
+  res.send({ 'token':token, 'name':user.name });
 };
 
 

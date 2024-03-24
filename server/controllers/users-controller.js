@@ -18,7 +18,8 @@ const register= async (req, res) => {
   const newUser = {
     name,
     email,
-    password:hashedPassword
+    password:hashedPassword,
+    regist_time:new Date().toISOString().slice(0, 19).replace('T', ' ')
   };
 
   // Insert it into our database
@@ -61,7 +62,7 @@ const login= async (req, res) => {
     { expiresIn: "24h" }
   );
 
-  res.send({ 'token':token, 'name':user.name });
+  res.send({ 'token':token, 'name':user.name, 'id':user.id });
 };
 
 
@@ -69,7 +70,7 @@ const login= async (req, res) => {
 
 const getReviewsList = async (req, res) => {
   const userId = req.params.id 
-
+  console.log("userId="+userId);
   try {
     // Fetch all reviews related to the user
     const reviews = await knex("reviews")
@@ -91,7 +92,7 @@ const getReviewsList = async (req, res) => {
       .limit(10);
 
     if (!reviews || reviews.length === 0) {
-      return res.status(404).json({ error: "No reviews found for this " });
+      return res.status(404).json({ error: "No reviews found for this user" });
     }
 
     res.status(200).json(reviews);

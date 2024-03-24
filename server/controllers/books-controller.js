@@ -91,7 +91,8 @@ const reviewsOfOneBook = async (req, res) => {
         "users.name as user_name" // Include user name from users table
       )
       .join("users", "reviews.user_id", "users.id")
-      .where("reviews.book_id", bookId);
+      .where("reviews.book_id", bookId)
+      .orderBy("reviews.stars", "desc");
 
     if (!reviews || reviews.length === 0) {
       return res.status(404).json({ error: "No reviews found for this book" });

@@ -25,7 +25,8 @@ function LoginPage() {
 
       navigate("/");
     } catch (error) {
-      setError(error);
+      console.log("failed to login: "+error)
+      setError("Failed to login");
     }
   };
 

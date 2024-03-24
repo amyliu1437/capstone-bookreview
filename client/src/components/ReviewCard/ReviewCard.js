@@ -24,7 +24,7 @@ function ReviewCard({ ReviewCardItem }) {
             <p className="review__time">Reviewed on <span>{timeFormat(ReviewCardItem.review_time)}</span></p>
             <div className="review__control">
               <button className="review__button">Edit</button>
-              <button className="review__button">Edit</button>
+              <button className="review__button">Delete</button>
             </div>
           </div>
           <p className="review__text">{ReviewCardItem.content}</p>

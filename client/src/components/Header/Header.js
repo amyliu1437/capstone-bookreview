@@ -34,8 +34,9 @@ const Header = () => {
       <div className={`navbar ${showMenu ? 'navbar__mobile' : ''}`}>
         <ul className="navbar__list">
           <li ><NavLink className="navbar__item" to={"/"}>Home</NavLink></li>
-          <li ><NavLink className="navbar__item" to={"/"}>Books</NavLink></li>
-          <li ><NavLink className="navbar__item" to={"/"}>My Reviews</NavLink></li>
+          <li ><NavLink className="navbar__item" to={"/books"}>Books</NavLink></li>
+          {user && <li ><NavLink className="navbar__item" to={`/users/${user.id}/reviews`}>My Reviews</NavLink></li>}
+          {!user && <li ><NavLink className="navbar__item" to={"/login"}>My Reviews</NavLink></li>}
         </ul>
       </div>
       <div className="login">

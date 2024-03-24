@@ -1,5 +1,9 @@
 import './RatingStar.scss';
 const RatingStar = ({ rating }) => {
+  if (!rating) {
+    return (<div className="rating"></div>);
+  }
+  const fixedRating = parseFloat(rating).toFixed(2);
   const renderStars = () => {
     const stars = [];
     const fullStars = Math.floor(rating);
@@ -22,7 +26,7 @@ const RatingStar = ({ rating }) => {
   };
 
   return (
-    <div className="rating">
+    <div className="rating" title={fixedRating}>
       {renderStars()}
     </div>
   );

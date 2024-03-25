@@ -1,0 +1,17 @@
+
+.field_rating{
+  .star, .activeStar {
+    cursor: pointer;
+    float: left;
+    font-size: 1.75rem;
+    color: gray;
+  }
+
+  .activeStar {
+    color: gold;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+}

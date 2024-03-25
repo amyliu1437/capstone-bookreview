@@ -5,24 +5,17 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 
 function MyReviewsPage(){
-
-   const userId= useParams();
-   
-   const selectedUserId = userId.userid;
-   
- 
+   const userId= useParams();   
+   const selectedUserId = userId.userid;   
   
   const [bookReviews, setBookReviews]= useState([]);
      useEffect(() => {
 
     const getBookReviews = async () => {
-
       try {
         const response = await axios.get(`http://localhost:8080/users/${selectedUserId}/reviews`);
-
         setBookReviews(response.data);
-
-        console.log(response.data)
+        // console.log(response.data)
       } catch (error) {
         console.log(error)
       }

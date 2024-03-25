@@ -17,7 +17,7 @@ function ReviewCard({ ReviewCardItem }) {
         </div>
         <div className="review">
           <div className="review__info" >
-          <RatingStar rates={ReviewCardItem.stars} />
+          <RatingStar rating={ReviewCardItem.stars} />
           <span className="review__title">{ReviewCardItem.rtitle}</span>
           </div>
           <div className="review__middle">

@@ -19,4 +19,9 @@ router
   router
   .route("/:id/reviews")
   .get(booksController.reviewsOfOneBook);
+
+
+  router
+  .route("/:query")
+  .get(booksController.searchBooks);
 module.exports = router;

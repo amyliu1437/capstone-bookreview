@@ -1,8 +1,7 @@
 
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useParams, Navigate } from "react-router-dom";
-import { useEffect, useState, createContext } from "react";
+import { useState, createContext } from "react";
 import Header from './components/Header/Header';
 import Homepage from './Pages/HomePage/HomePage';
 import BookListPage from './Pages/BookListPage/BookListPage';

@@ -1,8 +1,7 @@
 import './AddNewReview.scss';
 import axios from 'axios';
-import { useState, useEffect,useContext } from 'react';
-import { Link, useParams, useNavigate, useLocation} from 'react-router-dom';
-import RatingStar from '../RatingStar/RatingStar';
+import { useContext } from 'react';
+import { useParams, useNavigate, useLocation} from 'react-router-dom';
 import Input from '../Input/Input';
 import InputRating from '../InputRating/InputRating';
 import { UserContext } from '../../App';
@@ -13,7 +12,7 @@ function AddNewReview() {
   const { user, setUser } = useContext(UserContext);
 
   const selectedId = bookId.bookid;
-  const [bookSelected, setBookSelected] = useState({});
+
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -34,6 +33,7 @@ function AddNewReview() {
     try {
       
       const response = await axios.post(`http://localhost:8080/reviews`,newReview);
+      console.log(response)
   
     } catch (error) {
       console.log("failed to add review: "+error)

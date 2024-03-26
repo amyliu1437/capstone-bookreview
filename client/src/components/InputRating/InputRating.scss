@@ -2,18 +2,18 @@
 .field_rating{
   display: flex;
  
-  .star, .activeStar {
+  &__star, &__activeStar {
     cursor: pointer;
     float: left;
     font-size: 1.75rem;
     color: gray;
   }
 
-  .activeStar {
+  &__activeStar {
     color: gold;
   }
 
-  input[type="radio"] {
+  &__input[type="radio"] {
     display: none;
   }
 }

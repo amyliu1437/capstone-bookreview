@@ -3,7 +3,7 @@ import "./InputRating.scss";
 
 function InputRating({ label, name, preloadValue }) {
   const [rating, setRating] = useState(preloadValue);
-  const [hover, setHover] = useState(null);
+  const [hover, setHover] = useState(0);
 
   const handleRatingChange = (event) => {
     const ratingValue = parseInt(event.target.value);
@@ -12,7 +12,8 @@ function InputRating({ label, name, preloadValue }) {
   };
 
   const handleHoverChange = (ratingValue) => {
-    setHover(ratingValue);
+    console.log("handleHoverChange: "+ratingValue);
+    setRating(ratingValue);
   };
 
   return (
@@ -24,21 +25,23 @@ function InputRating({ label, name, preloadValue }) {
         const ratingValue = i + 1;
         return (
           <div key={ratingValue}>
+            <label>
             <input
               type="radio"
               id={`${name}_${ratingValue}`}
               name={name}
-              value={ratingValue}
+              value={rating}
               checked={rating === ratingValue}
               onChange={handleRatingChange}
+              className="field_rating__input"
             />
             <span
-              onMouseEnter={() => handleHoverChange(ratingValue)}
-              onMouseLeave={() => setHover(null)}
-              className={ratingValue <= (hover || rating) ? "activeStar" : "star"}
+              onClick={() => handleHoverChange(ratingValue)}
+              className={ratingValue <= (hover || rating) ? "field_rating__activeStar" : "field_rating__star"}
             >
               &#9733;
             </span>
+            </label>
           </div>
         );
       })}

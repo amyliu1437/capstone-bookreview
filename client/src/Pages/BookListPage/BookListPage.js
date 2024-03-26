@@ -9,7 +9,6 @@ function BookListPage(){
     const getBookList = async () => {
       try {
         const response = await axios.get("http://localhost:8080/books")
-        // console.log(response)
         setBookList(response.data);
       } catch (error) {
         console.log(error)

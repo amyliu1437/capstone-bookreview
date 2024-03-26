@@ -3,11 +3,11 @@ import RatingStar from '../RatingStar/RatingStar';
 import timeFormat from '../../timeUtils';
 import Avatar from '../Avatar/Avatar';
 function ReviewItem({review}){
-  console.log(review)
+
   return(
     <div>
       <div>
-        <Avatar name={review.userName} />
+        <Avatar name={review.user_name} />
         <span>{review.userName}</span>
         <span>{timeFormat(review.review_time)} </span>
         <RatingStar  rating={review.stars}/>

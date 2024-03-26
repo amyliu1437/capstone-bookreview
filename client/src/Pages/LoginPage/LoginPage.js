@@ -1,7 +1,6 @@
 import "./LoginPage.scss";
 import { Link } from "react-router-dom";
 import Input from "../../components/Input/Input";
-import InputRating from '../../components/Input/InputRating';
 import axios from "axios";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
@@ -39,8 +38,6 @@ function LoginPage() {
         <h1 className="login__title">Log in</h1>
         <Input type="text" name="email" label="Email" />
         <Input type="password" name="password" label="Password" />
-
-        {/* <InputRating name="rating" label="Rating"/> */}
 
         <button className="login__button">Log in</button>
         {error && <div className="login__message">{error}</div>}

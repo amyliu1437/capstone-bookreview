@@ -1,60 +1,65 @@
 import './AddNewReview.scss';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useState, useEffect,useContext } from 'react';
+import { Link, useParams, useNavigate, useLocation} from 'react-router-dom';
 import RatingStar from '../RatingStar/RatingStar';
+import Input from '../Input/Input';
+import InputRating from '../InputRating/InputRating';
+import { UserContext } from '../../App';
 
 function AddNewReview() {
   const bookId = useParams();
-  console.log(bookId)
-  const selectedId = bookId.bookid;
-  console.log(selectedId)
+  const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
 
+  const selectedId = bookId.bookid;
   const [bookSelected, setBookSelected] = useState({});
 
-  useEffect(() => {
-    const getBook = async () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const bookcover = queryParams.get('bookcover');
 
-      try {
-        const response = await axios.get(`http://localhost:8080/books/${selectedId}`);
-
-        setBookSelected(response.data);
-      } catch (error) {
-        console.log(error)
+  
+  const handlerReviewSubmit = async (event) => {
+    event.preventDefault();
+    
+      const newReview={
+        bookId: Number(selectedId),
+        user_id: user.id,
+        stars: Number(event.target.rating.value),
+        title: event.target.title.value,
+        content: event.target.content.value
       }
-    }
-    getBook();
 
-  }, [selectedId]);
+    try {
+      
+      const response = await axios.post(`http://localhost:8080/reviews`,newReview);
+  
+    } catch (error) {
+      console.log("failed to add review: "+error)
+    }
+
+    navigate(`/books/${selectedId}`)
+  };
 
   return (
     <div className="page-container">
       <section className="book">
-        <img className="book__image" src={bookSelected.cover} alt='bookcover.svg' />
-        <div className="book__info">
-          <h2 className="book__title">{bookSelected.title}</h2>
-          <h3 className="book__title"> {bookSelected.author}</h3>
-          <RatingStar rates={bookSelected.average_stars} />
-          <p className="book__description"> {bookSelected.summary} </p>
-          <button>Add Review</button>
-        </div>
+        <img className="book__image" src={bookcover} alt='bookcover.svg' />
+  
       </section>
       <section className="addon-section">
-        <form>
-          <label>Review Score: </label>
+        <form className="review-input" onSubmit={handlerReviewSubmit}>
+       
+          <InputRating name="rating" label="Please GIve your Star"/>
 
-          <label>Review Title:  </label>
-          <input></input>
+          <Input type="text" name="title" label="Review Title: " />
+          <Input type="textarea" name="content" label="Review Content: " />
 
-          <label>Review Content:  </label>
-          <div> 
-          <textarea></textarea>
           <p>You can input up to 2000 characters</p>
-          </div>
-          <button>Submit</button>
+          <button type="submit">Submit</button>
 
         </form>
-
 
       </section>
 
@@ -62,5 +67,6 @@ function AddNewReview() {
   )
 
 }
+
 
 export default AddNewReview;

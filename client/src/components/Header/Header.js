@@ -31,7 +31,7 @@ const Header = () => {
       <div className="logo">
         Logo
       </div>
-      <div className={`navbar ${showMenu ? 'navbar__mobile' : ''}`}>
+      <div className={`navbar ${showMenu ? 'navbar-mobile' : ''}`}>
         <ul className="navbar__list">
           <li ><NavLink className="navbar__item" to={"/"}>Home</NavLink></li>
           <li ><NavLink className="navbar__item" to={"/books"}>Books</NavLink></li>
@@ -39,12 +39,16 @@ const Header = () => {
           {!user && <li ><NavLink className="navbar__item" to={"/login"}>My Reviews</NavLink></li>}
         </ul>
       </div>
-      <div className="login">
-        {user && <NavLink className="navbar__item">{user.name}</NavLink>}
+      <div className="header__right">
+        <div className="login__items">
+        {user && <NavLink className="login__username">{user.name}</NavLink>}
         {user && <NavLink className="login__link" onClick={handleLogout}>Logout</NavLink>}
+        </div>
         {!user && <NavLink className="login__link" to={"/login"}>Login</NavLink>}
+       
       </div>
-      <div className="hamburger-menu" onClick={toggleMenu}>&#9776;</div>
+       <div className="hamburger-menu" onClick={toggleMenu}>&#9776;</div>
+     
     </div>
   );
 };

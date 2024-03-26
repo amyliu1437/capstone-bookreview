@@ -1,5 +1,7 @@
 
 .field_rating{
+  display: flex;
+ 
   .star, .activeStar {
     cursor: pointer;
     float: left;

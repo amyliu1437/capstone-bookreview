@@ -37,23 +37,28 @@ function BookDetails() {
 
   return (
     <div className="page-container">
-      <section className="book">
-        <img className="book__image" src={bookSelected.cover} alt='bookcover.svg' />
-        <div className="book__info">
-          <h2 className="book__title">{bookSelected.title}</h2>
-          <h3 className="book__detail"> {bookSelected.author}</h3>
-          <h3 className="book__detail"> {bookSelected.publisher}</h3>
+      <section className="book-section">
+        <img className="single-book__image" src={bookSelected.cover} alt='bookcover.svg' />
+        <div className="single-book__info">
+          <h2 className="single-book__title">{bookSelected.title}</h2>
+          <h3 className="single-book__detail"> {bookSelected.author}</h3>
+          <h3 className="single-book__detail"> {bookSelected.publisher}</h3>
           <RatingStar rating={bookSelected.average_stars} />
-          <p className="book__description"> {bookSelected.summary} </p>
-          <button>Add Review</button>
+          <p className="single-book__description"> {bookSelected.summary} </p>
+
+          <Link
+            to={`/books/${selectedId}/addnew?bookcover=${bookSelected.cover}`}>
+            <button className="single-book__button">Add Review</button>
+          </Link>
+
         </div>
       </section>
 
-      <section className="reviews-container">
+      <section className="reviews-section">
         <h2>Reviews</h2>
         <div className="review-list">
           {bookReviews.map((review) => (
-            <ReviewItem review={review}
+            <ReviewItem key={review.id} review={review}
             />
           ))}
 

@@ -35,7 +35,7 @@ function SignupPage() {
       <form className="signup" onSubmit={handleSubmit}>
         <h1 className="signup__title">Sign up</h1>
 
-        <Input type="text" name="name" label="Display Name" />
+        <Input type="text" name="name" label="Name" />
         <Input type="text" name="email" label="Email" />
         <Input type="password" name="password" label="Password" />
 

@@ -30,13 +30,28 @@
   
 }
 
+.header-right{
+  flex: 1;
+  background-color: none;
+}
 
 .login {
-  flex: 1;
-  text-align: right;
-
+  display: inline;
+  text-decoration: none;
+  &__items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  
+  }
+  
+  &__username{
+    width: 40%;
+    text-decoration: none;
+  }
   &__link{
     text-decoration: none;
+    width: 20%;
   }
 }
 
@@ -44,6 +59,8 @@
 .hamburger-menu {
   display: none;
   cursor: pointer;
+  width: 10%;
+  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -63,10 +80,10 @@
     display: block;
   }
 
-
-  .navbar.mobile li {
-    margin: 10px 0;
+  .navbar-mobile,.navbar__list {
+    display: relative;
     text-align: center;
+    display: flex;
  
   }
 }

@@ -30,7 +30,7 @@ function MyReviewsPage(){
        <h1>All My Reviews</h1> 
        <div className="review-list">
         {bookReviews.map((review) => (
-                    <ReviewCard ReviewCardItem={review} />
+           <ReviewCard key={review.id} userId={selectedUserId} ReviewCardItem={review} />
         ))}
 
         </div> 

@@ -12,6 +12,7 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 import LogoutPage from './Pages/LoginPage/LogoutPage';
 import SignupPage from './Pages/SignupPage/SignupPage';
 import AddNewReview from './components/AddNewReview/AddNewReview';
+import EditReviewItem from './components/EditReviewItem/EditReviewItem';
 
 export const UserContext = createContext(null);
 
@@ -32,6 +33,7 @@ function App() {
           <Route path='/books/:bookid' element={<BookDetailsPage />} />
           <Route path='/users/:userid/reviews' element={<MyReviewsPage />} />
           <Route path='/books/:bookid/addnew' element={<AddNewReview />} />
+          <Route path='/reviews/:reviewid/edit' element={<EditReviewItem />} />
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>

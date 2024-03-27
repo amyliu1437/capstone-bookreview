@@ -106,30 +106,34 @@ const reviewsOfOneBook = async (req, res) => {
 
 //get booklist according to search query
 const searchBooks = async (req, res) => {
+  const { query } = req.query;
 
-  const {query} = req.query;
   if (!query) {
-      return res.status(400).json({ error: 'Query parameter is required' });
+    return res.status(400).json({ error: 'Query parameter is required' });
   }
 
   try {
-    const knexQuery = knex("books")
-    .select(
-      "books.id",
-      "books.title",
-      "books.author",
-      "books.cover",
-      knex.raw("AVG(reviews.stars) AS average_stars")
-    )
-    .join("reviews", "books.id", "reviews.book_id")
-    .where('books.title', 'ilike', `%${query}%`)
-    .orWhere('books.author', 'ilike', `%${query}%`)
-    .groupBy("books.id", "books.title", "books.author", "books.cover");
-  
-  console.log(knexQuery.toString()); // Print the generated SQL query
+    const data = await knex('books')
+      .select(
+        'books.id',
+        'books.title',
+        'books.author',
+        'books.cover',
+        // knex.raw('AVG(reviews.stars) AS average_stars')
+      )
+      // .join('reviews', 'books.id', 'reviews.book_id')
+      .whereRaw('LOWER(books.title) LIKE LOWER(?)', [`%${query}%`])
+      // .orWhereRaw('LOWER(books.author) LIKE ?', [`%${query.toLowerCase()}%`])
+      .groupBy('books.id', 'books.title', 'books.author', 'books.cover');
+
+    if (data.length === 0) {
+      return res.status(404).json({ error: 'No books found matching the search criteria' });
+    }
+
     res.status(200).json(data);
   } catch (err) {
-    res.status(400).send(`Error retrieving books: ${err}`);
+    console.error('Error searching books:', err);
+    res.status(500).send(`Error retrieving books: ${err.message}`);
   }
 };
 

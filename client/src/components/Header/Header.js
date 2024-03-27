@@ -1,12 +1,13 @@
 import './Header.scss';
-import { useState, useEffect,useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { UserContext } from '../../App';
+import logoImage from '../../assets/Image/logo.png'
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { user, setUser } = useContext(UserContext);
-  
+
   const handleLogout = () => {
     setUser(null);
     localStorage.clear();
@@ -29,7 +30,9 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo">
-        Logo
+        <NavLink className="logo__item" to={"/"}>
+          <img className="logo__image" src={logoImage} alt="logo.png" />
+        </NavLink>
       </div>
       <div className={`navbar ${showMenu ? 'navbar-mobile' : ''}`}>
         <ul className="navbar__list">
@@ -39,17 +42,18 @@ const Header = () => {
           {!user && <li ><NavLink className="navbar__item" to={"/login"}>My Reviews</NavLink></li>}
         </ul>
       </div>
-      <div className="header__right">
-        <div className="login__items">
-        {user && <NavLink className="login__username">{user.name}</NavLink>}
-        {user && <NavLink className="login__link" onClick={handleLogout}>Logout</NavLink>}
+      <div className="function-bar">
+        <div className="menu" >
+          <div className="menu__items">
+            {user && <NavLink className="menu__username">{user.name}</NavLink>}
+            {user && <NavLink className="menu__link" onClick={handleLogout}>Logout</NavLink>}
+          </div>
+          {!user && <NavLink className="menu__link" to={"/login"}>Login</NavLink>}
         </div>
-        {!user && <NavLink className="login__link" to={"/login"}>Login</NavLink>}
-       
+        <div className="hamburger-menu" onClick={toggleMenu}>&#9776;</div>
       </div>
-       <div className="hamburger-menu" onClick={toggleMenu}>&#9776;</div>
-     
     </div>
+
   );
 };
 

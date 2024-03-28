@@ -2,50 +2,73 @@
 
 .bookcard{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   padding: 16px 0;
-  width: 90%;
-
+  width: 45%;
+  padding: 8px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+ 
   @include tablet {
-    width: 25%;
+    width: 23%;
     flex-direction: column;
   }
 
   &__image{
-    width: 50%;
-    height: auto;
-    cursor: pointer;
-
-    @include tablet{
-      width: 90%;
-    }
+   display: flex;
+  justify-content: center;
   }
 
+  &__cover{
+    width: 80%;
+  }
   &__info{
-    width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
-    @include tablet{
-      width: 90%;
-    }
   
   }
   &__title{
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.875rem;
+
+    @include tablet{
+      font-size: 0.913rem;
+    };
   }
 
   &__author{
     font-weight: bold;
     font-size: 0.875rem;
+    color: $primeSilver;
+
+    @include tablet{
+      font-size: 0.913rem;
+    };
+
+
+    &--gray{
+      padding-left: 16px;
+      color: $secondaryDarkBlack;
+    }
   }
 
   &__rating{
+    width: 90%;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+
+    // @include tablet{
+    //   width: 70%
+    // };
+
+    &--bold{
+      font-weight: bold;
+      font-size: 0.875rem;
+    }
   }
 }

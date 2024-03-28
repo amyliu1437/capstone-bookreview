@@ -4,7 +4,7 @@ import TopRatedBooks from '../../components/TopRatedBooks/TopRatedBooks';
 
 function Homepage(){
   return(
-    <div>
+    <div className="homepage">
     <LatestComment />
     <TopRatedBooks />
     </div>

@@ -1,1 +1,15 @@
 @import '../../styles/global';
+
+.reviews-container{
+  margin: 0;
+  padding: 0;
+}
+
+.my-reviews{
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  @include tablet{
+    padding: 32px 10%;
+  }
+}

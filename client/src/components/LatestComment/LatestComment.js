@@ -21,20 +21,21 @@ function LatestComment() {
   return (
     <div className="banner-containner">
       <section className="hero-banner">
-        <h1 className="hero-banner__title">Latest Review</h1>
-        <div className="hero-banner__content">
 
-          <img className="review__image" src={latestReview.book_cover} alt='bookcover.svg' />
-
-          <div className="review">
-            <p className="review__title">{latestReview.review_title} </p>
-            <div className="review__content"> {latestReview.review_content} </div>
+        <div className="hero-banner__left">
+          <h3 className="hero-banner__title">Latest Review</h3>
+          <div className="review-items">
+            <p className="review-items__title">{latestReview.review_title} </p>
+            <div className="review-items__content"> {latestReview.review_content} </div>
           </div>
-
-
+          <div className="hero-banner__link">
+            <button className="hero-banner__button"> Read More</button>
+          </div>
         </div>
 
-
+        <div className="hero-banner__right">
+          <img className="hero-banner__image" src={latestReview.book_cover} alt='bookcover.svg' />
+        </div>
 
       </section>
     </div>

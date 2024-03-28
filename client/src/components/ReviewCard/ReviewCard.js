@@ -8,10 +8,7 @@ function ReviewCard({ ReviewCardItem, userId }) {
 
   const navigate = useNavigate();
 
-  console.log(ReviewCardItem.id)
-
-
-
+  //Get all the reviews by the user
   const handleReviewDelete = async (event) => {
     event.preventDefault();
     try {
@@ -23,38 +20,46 @@ function ReviewCard({ ReviewCardItem, userId }) {
     navigate(`/users/${userId}/reviews`);
   }
 
-
-
   return (
     <div className="review-card">
-      <img className="review-card__image" src={ReviewCardItem.cover} />
-      <div className="review-card__content">
-        <div className="book">
-          <span className="book__title">{ReviewCardItem.title} </span>
-          <div className="book__info">
-            <p className="book__detail">By <span className="book__detail--bold">{ReviewCardItem.author}</span> </p>
-            <p className="book__detail">Publisher: <span className="book__detail--bold">{ReviewCardItem.publisher}</span> </p>
-          </div>
-        </div>
-        <div className="review">
-          <div className="review__info" >
-            <RatingStar rating={ReviewCardItem.stars} />
-            <span className="review__title">{ReviewCardItem.rtitle}</span>
-          </div>
-          <div className="review__middle">
-            <p className="review__time">Reviewed on <span>{timeFormat(ReviewCardItem.review_time)}</span></p>
-            <div className="review__control">
-              <Link
-                to={`/reviews/${ReviewCardItem.id}/edit?bookcover=${ReviewCardItem.cover}`}
-              >
-                <button className="review__button">Edit</button>
-              </Link>
-              <button className="review__button" onClick={handleReviewDelete}>Delete</button>
+     
+        <img className="review-card__image" src={ReviewCardItem.cover} />
+
+
+      <section className="review-card__right">
+
+        <div className="review-card__content">
+          <div className="review-book">
+            <span className="review-book__title">{ReviewCardItem.title} </span>
+            <div className="review-book__info">
+              <p className="review-book__detail">By <span className="review-book__detail--black">{ReviewCardItem.author}</span> </p>
+              <p className="review-book__detail">Publisher: <span className="review-book__detail--black">{ReviewCardItem.publisher}</span> </p>
             </div>
           </div>
-          <p className="review__text">{ReviewCardItem.content}</p>
+          <div className="review-body">
+            <div className="review-body__info" >
+              <RatingStar rating={ReviewCardItem.stars} />
+              <span className="review-body__title">{ReviewCardItem.rtitle}</span>
+            </div>
+            <div className="review-body__middle">
+              <p className="review-body__time">Reviewed on <span>{timeFormat(ReviewCardItem.review_time)}</span></p>
+
+            </div>
+            <p className="review-body__text">{ReviewCardItem.content}</p>
+          </div>
         </div>
-      </div>
+
+        <div className="review-card__control">
+          <div className="control-items" > 
+          <Link className="control-items__link"
+            to={`/reviews/${ReviewCardItem.id}/edit?bookcover=${ReviewCardItem.cover}`}
+          >
+            Edit
+          </Link>
+          <button className="control-items__button" onClick={handleReviewDelete}>Delete</button>
+        </div>
+        </div>
+      </section>
     </div>
   );
 }

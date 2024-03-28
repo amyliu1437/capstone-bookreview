@@ -15,7 +15,7 @@ function BookDetails() {
       try {
         const response = await axios.get(`http://localhost:8080/books/${selectedId}`);
         setBookSelected(response.data);
-        // console.log(response.data);
+        console.log(response.data);
       } catch (error) {
         console.log(error)
       }
@@ -37,34 +37,57 @@ function BookDetails() {
 
   return (
     <div className="page-container">
-      <section className="book-section">
-        <img className="single-book__image" src={bookSelected.cover} alt='bookcover.svg' />
-        <div className="single-book__info">
-          <h2 className="single-book__title">{bookSelected.title}</h2>
-          <h3 className="single-book__detail"> {bookSelected.author}</h3>
-          <h3 className="single-book__detail"> {bookSelected.publisher}</h3>
-          <RatingStar rating={bookSelected.average_stars} />
-          <p className="single-book__description"> {bookSelected.summary} </p>
+      <div className="detail-page">
+        <h1 className="detail-page__title" >Book Detail and Reviews </h1>
+        <section className="single-book">
+          <div className="single-book__top" >
+            <img className="book__image" src={bookSelected.cover} alt='bookcover.svg' />
+          </div>
+          <div className="single-book__middle">
+            <div >
+              <h2 className="book__title">{bookSelected.title}</h2>
+              <div className="book__detail">
+                <h3 className="detail__item">
+                  By
+                  <span className="detail__item detail__item--black" > {bookSelected.author}</span>
+                </h3>
+                <h3 className="detail__item">
+                  Publisher
+                  <span className="detail__item detail__item--black" >{bookSelected.publisher}</span>
+                </h3>
+              </div>
+            </div>
+            <div className="single-book__buttom">
+              <div className="rating">
+                <RatingStar rating={bookSelected.average_stars} />
+                <p className="rating__info">
+                  <span className="rating__number" > {bookReviews.length} </span>
+                  ratings
+                </p>
+              </div>
+              <p className="book__description"> {bookSelected.summary} </p>
 
-          <Link
-            to={`/books/${selectedId}/addnew?bookcover=${bookSelected.cover}`}>
-            <button className="single-book__button">Add Review</button>
-          </Link>
+              <Link className="single-book__button"
+                to={`/books/${selectedId}/addnew?bookcover=${bookSelected.cover}`}>
+                Add Review
+              </Link>
+            </div>
+          </div>
+        </section>
 
-        </div>
-      </section>
+        <section className="reviews-section">
+          <h2 className="reviews-section__title">Reviews</h2>
+          <div className="review-section__list">
+            {bookReviews.map((review) => (
+              <ReviewItem key={review.id} review={review}
+              />
+            ))}
 
-      <section className="reviews-section">
-        <h2>Reviews</h2>
-        <div className="review-list">
-          {bookReviews.map((review) => (
-            <ReviewItem key={review.id} review={review}
-            />
-          ))}
+          </div>
 
-        </div>
+        </section>
 
-      </section>
+      </div>
 
     </div>
   )

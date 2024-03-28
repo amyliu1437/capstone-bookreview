@@ -1,15 +1,20 @@
 @import '../../styles/global' ;
 .top-container{
   margin: 0;
-  width: 100%;
   padding: 0;
+  width: 100%;
 }
 
 .top-booklist{
-  margin: 0 32px;
+  padding: 16px;
+  @include tablet{
+    padding: 32px 10%;
+  }
   &__list{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-shrink: 1;
     padding: 24px 0;
 
     @include tablet{

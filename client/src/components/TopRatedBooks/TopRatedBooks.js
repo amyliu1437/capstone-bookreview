@@ -20,7 +20,7 @@ function TopRatedBooks() {
   return (
     <div className="top-containner">
       <section className="top-booklist">
-        <h1 className="top-booklist__title">Top Rated books</h1>
+        <h2 className="top-booklist__title">Top Rated books</h2>
         <div className="top-booklist__list">
         {topRatedBooks.map((book) => (
                     <BookCard book={book}

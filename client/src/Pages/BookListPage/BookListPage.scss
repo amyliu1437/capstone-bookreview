@@ -1,5 +1,29 @@
-.bookist-list{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+@import '../../styles/global';
+
+.bookist-container{
+  margin: 0;
+  padding: 0;
 }
+
+.booklist{
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  @include tablet{
+    padding: 32px 10%;
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  &__title{
+   margin: 1rem 0;
+  }
+}
+
+
+

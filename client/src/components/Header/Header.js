@@ -28,6 +28,7 @@ const Header = () => {
 
 
   return (
+    <div className="header-container">
     <div className="header">
       <div className="logo">
         <NavLink className="logo__item" to={"/"}>
@@ -45,13 +46,14 @@ const Header = () => {
       <div className="function-bar">
         <div className="menu" >
           <div className="menu__items">
-            {user && <NavLink className="menu__username">{user.name}</NavLink>}
+            {user && <NavLink className="menu__username">{user.name.split(" ")[0]}</NavLink>}
             {user && <NavLink className="menu__link" onClick={handleLogout}>Logout</NavLink>}
           </div>
           {!user && <NavLink className="menu__link" to={"/login"}>Login</NavLink>}
         </div>
         <div className="hamburger-menu" onClick={toggleMenu}>&#9776;</div>
       </div>
+    </div>
     </div>
 
   );

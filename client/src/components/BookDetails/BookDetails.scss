@@ -4,31 +4,73 @@
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+.detail-page{
   display: flex;
   flex-direction: column;
+  padding: 16px;
+  background-color: $seccondaryGray;
+  @include tablet{
+    padding: 32px 10%;
+  }
 }
 
-.book-section{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
 .single-book{
-
-  &__image{
-    width:20%
+  display: flex;
+  flex-direction: column;
+  background-color: $primeWhite;
+  padding: 16px 24px;
+  @include tablet{
+    flex-direction: row;
   }
-  &__info{
-    width: 78%;
+  
+  &__top{
+    display:flex;
+    justify-content: center;
+    @include tablet{
+      width: 30%;
+    }
+
+  }
+  &__middle{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+
+  }
+
+  &__buttom{
+    display: flex;
+    flex-direction: column;
 
   }
   &__button{
-    width: 10%;
-    align-items: right;
+    width: 60%;
+    align-self: center;
+    height: 36px;
+    background-color: $primeBlue;
+    border: 1px solid $secondaryMercury;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    color: $primeWhite;
+    text-align: center;
+    line-height: 36px;
+    font-weight: bold;
+  }
+}
+
+.book{
+  &__image{
+    align-self: center;
+    width: 100%;
+    @include tablet{
+      width: 30%;
+    }
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+
   }
 }

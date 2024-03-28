@@ -57,6 +57,7 @@ const findOneBook = async (req, res) => {
         "books.title",
         "books.author",
         "books.summary",
+        "books.publisher",
         knex.raw("AVG(reviews.stars) AS average_stars")
       )
       .leftJoin("reviews", "books.id", "reviews.book_id")

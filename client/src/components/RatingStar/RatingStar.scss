@@ -1,33 +1,15 @@
+@import '../../styles/global';
 .rating {
-  display: flex; /* Use flexbox to align stars */
-  align-items: center; /* Center stars vertically */
+  display: flex; 
+  align-items: center; 
 }
 
 
 .star {
+  width: 18px;
+  height: 18px;
   display: inline-block;
-  font-size: 1.75rem;
-  color: gold;
- 
+  margin: 10px 0px;
 }
 
-.full {
-  width: 1.2em;
-}
 
-.half {
-  position: relative;
-  width: 0.6em;
-  overflow: hidden;
-}
-
-.half::after {
-  content: "\00BD";
-  position: absolute;
-  left: 0;
-  width: 50%;
-}
-
-.empty {
-  color:gray; /* Color for empty stars */
-}

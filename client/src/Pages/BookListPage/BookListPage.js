@@ -24,7 +24,7 @@ function BookListPage(){
   return(
     <div className="booklist-container">
       <section className="booklist">
-        <h1>BookList</h1>
+        <h1 className="booklist__title">BookList</h1>
         {/* <div>
         <input         
         type="text" 
@@ -37,7 +37,7 @@ function BookListPage(){
         </Link> 
         
         </div> */}
-        <div className="bookist-list">
+        <div className="booklist__list">
         {bookList.map((book) => (
                     <BookCard book={book}
                     />

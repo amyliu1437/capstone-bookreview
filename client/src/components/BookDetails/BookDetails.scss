@@ -22,31 +22,48 @@
   flex-direction: column;
   background-color: $primeWhite;
   padding: 16px 24px;
+  border-bottom: 1px solid $secondaryMercury;
   @include tablet{
     flex-direction: row;
+    padding: 16px;
+    justify-content: space-between;
   }
   
-  &__top{
+  &__left{
     display:flex;
     justify-content: center;
     @include tablet{
       width: 30%;
+      text-align: center;
     }
 
+  }
+
+  &__right{
+    display: flex;
+    flex-direction: column;
+    @include tablet{
+      width: 68%;
+    }
   }
   &__middle{
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid $secondaryMercury;
 
   }
 
   &__buttom{
     display: flex;
     flex-direction: column;
+    @include tablet{
+      position: relative;
+      padding: 16px 0;
+    }
 
   }
   &__button{
-    width: 60%;
+    width: 100%;
     align-self: center;
     height: 36px;
     background-color: $primeBlue;
@@ -57,6 +74,12 @@
     text-align: center;
     line-height: 36px;
     font-weight: bold;
+    @include tablet{
+      width: 25%;
+      position: absolute;
+      top:16px;
+      right: 0;
+    }
   }
 }
 
@@ -65,12 +88,66 @@
     align-self: center;
     width: 100%;
     @include tablet{
-      width: 30%;
+      width: 100%;
+    }
+  }
+
+  &__detail{
+    display: flex;
+    flex-direction: column;
+    @include tablet{
+       width: 70%;
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
   &__info{
     display: flex;
     flex-direction: column;
 
+  }
+
+  &__text{
+    line-height: 1.5rem;
+    margin: 0.5rem 0;
+  }
+}
+
+.detail{
+  &__item{
+    color: $primeSilver;
+    margin: 0;
+    &--black{
+      color: $primeBlack;
+      padding-left: 8px;
+    }
+  }
+}
+
+.rating{
+  display: flex;
+  justify-content:first baseline;
+
+  &__info{
+    padding-left: 16px;
+    margin: 0.5rem 0;
+  }
+
+  &__number{
+    font-weight: bold;
+    padding-right: 8px;
+  }
+ 
+}
+
+
+.reviews-section{
+  background-color: $primeWhite;
+  display: flex;
+  flex-direction: column;
+
+  &__list{
+    display: flex;
+    flex-direction: column;
   }
 }

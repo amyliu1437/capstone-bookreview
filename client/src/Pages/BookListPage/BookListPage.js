@@ -39,8 +39,7 @@ function BookListPage(){
         </div> */}
         <div className="booklist__list">
         {bookList.map((book) => (
-                    <BookCard book={book}
-                    />
+                    <BookCard book={book} key={book.id}/>
         ))}
         </div>
       </section>

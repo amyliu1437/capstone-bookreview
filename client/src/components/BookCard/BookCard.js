@@ -11,9 +11,9 @@ function BookCard({ book }) {
     navigate(newurl);
   };
   return (
-    <div className="bookcard">
+    <div className="bookcard"  onClick={getBook}>
       <div className="bookcard__image">
-        <img className="bookcard__cover" src={book.cover} alt='bookcover.svg' onClick={getBook} />
+        <img className="bookcard__cover" src={book.cover} alt='bookcover.svg' />
       </div>
       <div className="bookcard__info">
         <p className="bookcard__title">{book.title} </p>

@@ -13,9 +13,7 @@ function LoginPage() {
   
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    // console.log("rating="+event.target.rating.value);
-
+ 
     try {
       const response = await axios.post("http://localhost:8080/users/login", {
         email: event.target.email.value,

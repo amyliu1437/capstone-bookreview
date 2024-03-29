@@ -8,10 +8,10 @@ import BookListPage from './Pages/BookListPage/BookListPage';
 import BookDetailsPage from './components/BookDetails/BookDetails';
 import MyReviewsPage from './Pages/MyReviewsPage/MyReviewsPage';
 import LoginPage from './Pages/LoginPage/LoginPage';
-import LogoutPage from './Pages/LoginPage/LogoutPage';
 import SignupPage from './Pages/SignupPage/SignupPage';
 import AddNewReview from './components/AddNewReview/AddNewReview';
 import EditReviewItem from './components/EditReviewItem/EditReviewItem';
+import Footer from './components/Footer/Footer';
 
 export const UserContext = createContext(null);
 
@@ -26,7 +26,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/login' element={<LoginPage />} />
-          <Route path='/logout' element={<LogoutPage />} />
           <Route path='/register' element={<SignupPage />} />
           <Route path='/books' element={<BookListPage />} />
           <Route path='/books/:bookid' element={<BookDetailsPage />} />
@@ -34,6 +33,7 @@ function App() {
           <Route path='/books/:bookid/addnew' element={<AddNewReview />} />
           <Route path='/reviews/:reviewid/edit' element={<EditReviewItem />} />
         </Routes>
+        <Footer />
       </UserContext.Provider>
     </BrowserRouter>
   );

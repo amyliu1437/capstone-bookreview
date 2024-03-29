@@ -23,8 +23,7 @@ function TopRatedBooks() {
         <h2 className="top-booklist__title">Top Rated books</h2>
         <div className="top-booklist__list">
         {topRatedBooks.map((book) => (
-                    <BookCard book={book}
-                    />
+                    <BookCard book={book} key={book.id}/>
         ))}
 
         </div>

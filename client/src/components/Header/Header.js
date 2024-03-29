@@ -1,16 +1,19 @@
 import './Header.scss';
 import { useState, useEffect, useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink,useNavigate } from 'react-router-dom';
 import { UserContext } from '../../App';
 import logoImage from '../../assets/Image/logo.png'
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
-  const handleLogout = () => {
+  function handleLogout() {
     setUser(null);
     localStorage.clear();
+    console.log("handleLogout");
+    navigate("/");
   };
 
   useEffect(() => {

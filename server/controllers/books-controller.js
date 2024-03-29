@@ -46,10 +46,7 @@ const topBooks = async (req, res) => {
 const findOneBook = async (req, res) => {
   const bookId = req.params.id;
 
- 
-
   try {
-    // Fetch the book and its average star rating
     const book = await knex("books")
       .select(
         "books.id",
@@ -93,6 +90,7 @@ const reviewsOfOneBook = async (req, res) => {
       )
       .join("users", "reviews.user_id", "users.id")
       .where("reviews.book_id", bookId)
+      .orderBy("reviews.review_time", "desc")
       .orderBy("reviews.stars", "desc");
 
     if (!reviews || reviews.length === 0) {

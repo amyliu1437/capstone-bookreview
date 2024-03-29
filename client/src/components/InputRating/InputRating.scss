@@ -1,6 +1,14 @@
+@import '../../styles/global';
 
-.field_rating{
+.rating-input{
   display: flex;
+  flex-direction: column;
+  &__label{
+    font-weight: 400;
+  }
+  &__value{
+    margin: 8px 0;
+  }
  
   &__star, &__activeStar {
     cursor: pointer;
@@ -16,4 +24,13 @@
   &__input[type="radio"] {
     display: none;
   }
+
+  &__error {
+    display: inline-block;
+    color: red;
+  }
+
+   &__hidden {
+    display: none;
+   } 
 }

@@ -120,6 +120,7 @@ const latestReview = async (req, res) => {
         "reviews.stars",
         "reviews.title as review_title",
         "reviews.content as review_content",
+        "books.id as book_id",
         "books.cover as book_cover"
       )
       .join("books", "reviews.book_id", "books.id")

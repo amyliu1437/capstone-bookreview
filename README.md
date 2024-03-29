@@ -1,11 +1,11 @@
 # Project Title
 
-BookReview Hub
+BookReview Website
 
 
 ## Overview
 
-BookReview Hub is a platform designed to address the challenges faced by book lovers in finding reliable sources for book recommendations and reviews. The platform provides users with a centralized space to share their thoughts and opinions on books they've read, connect with like-minded individuals, and discover new books tailored to their interests.
+BookReview Website is a platform designed to address the challenges faced by book lovers in finding reliable sources for book recommendations and reviews. The platform provides users with a centralized space to share their thoughts and opinions on books they've read, connect with like-minded individuals, and discover new books tailored to their interests.
 
 ## Problem
 

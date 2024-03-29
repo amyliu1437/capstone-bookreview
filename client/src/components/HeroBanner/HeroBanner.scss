@@ -1,0 +1,44 @@
+@import '../../styles/global';
+
+.banner-container{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.hero-banner{
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid $secondaryMercury;
+  background-color: $seccondaryGray;
+  background-image: url('../../assets/Image/hero-bg-img.svg');
+  background-repeat: no-repeat;
+
+  @include tablet{
+    padding: 32px 10%;
+  }
+
+  &__title{
+    font-size: 2.5rem;
+    line-height: 3rem;
+    padding: 32px 0;
+    @include tablet{
+      font-size: 4rem;
+    }
+  }
+
+  &__text{
+    font-size: 1rem;
+    text-align: center;
+    @include tablet{
+      font-size: 1.13rem;
+    }
+  }
+  &__content{
+    @include tablet{
+    padding-bottom: 32px;
+    }
+ }
+}

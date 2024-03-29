@@ -27,4 +27,13 @@
 }
 
 
+.pagination{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
 
+  &__page{
+    padding: 0 8px;
+  }
+}

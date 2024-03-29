@@ -1,8 +1,32 @@
 const knex = require("knex")(require("../knexfile"));
 
 // Get all books with average star values
+// const index = async (req, res) => {
+//   try {
+//     const data = await knex("books")
+//       .select(
+//         "books.id",
+//         "books.title",
+//         "books.author",
+//         "books.cover",
+//         knex.raw("AVG(reviews.stars) AS average_stars")
+//       )
+//       .join("reviews", "books.id", "reviews.book_id")
+//       .groupBy("books.id", "books.title", "books.author", "books.cover");
+//     res.status(200).json(data);
+//   } catch (err) {
+//     res.status(400).send(`Error retrieving books: ${err}`);
+//   }
+// };
+
 const index = async (req, res) => {
   try {
+    // Get pagination parameters from query string or use defaults
+    const page = parseInt(req.query.page) || 1;
+    const pageSize = parseInt(req.query.pageSize) || 20;
+    const offset = (page - 1) * pageSize;
+
+    // Fetch paginated subset of books along with average stars
     const data = await knex("books")
       .select(
         "books.id",
@@ -12,8 +36,25 @@ const index = async (req, res) => {
         knex.raw("AVG(reviews.stars) AS average_stars")
       )
       .join("reviews", "books.id", "reviews.book_id")
-      .groupBy("books.id", "books.title", "books.author", "books.cover");
-    res.status(200).json(data);
+      .groupBy("books.id", "books.title", "books.author", "books.cover")
+      .orderBy("books.id") // Ensure consistent ordering for pagination
+      .limit(pageSize)
+      .offset(offset);
+
+    // Fetch total count of books (for calculating total pages)
+    const totalCount = await knex("books").count("*").first();
+    const totalPages = Math.ceil(totalCount / pageSize);
+
+    // Return paginated data and pagination metadata
+    res.status(200).json({
+      data: data,
+      pagination: {
+        page: page,
+        pageSize: pageSize,
+        totalBooks: totalCount,
+        totalPages: totalPages,
+      },
+    });
   } catch (err) {
     res.status(400).send(`Error retrieving books: ${err}`);
   }

@@ -63,47 +63,48 @@ Basic book information comes from NewYork Times book API--Top popular book list 
 
 [Home page]
 
-![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/b33c67a8-786a-4095-ba71-04b93bf03bab) 
-
+![Home_Page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/a6fdcb39-5e2b-49fe-b5af-5bebfedcb741)
 
 [Books listing page]
 
-![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/95ec9f0b-160a-4d9a-ad3d-f2a2ef74eb35)
+![Book_List_Page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/7737af57-6bda-46b6-8afc-3be71f848458)
+
 
 [Book details page]
 
-![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/e02e43b4-d46c-4b72-a1bc-7952c11311e0)
+![Book_Detail_Page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/2b6e5898-59dc-4208-944c-aad19363faa5)
 
 
 [Register page]
 
-![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/9f62a63d-e4d5-4535-afb5-88337e29f7ae)
-
+![SIgnup_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/373e04c8-9e69-4906-9c05-798dfc432924)
 
 
 [Login page]
 
 
-![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/abb88aa8-c46b-4f5d-8671-040bf0615f61)
+![SignIn_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/e77cb223-8f83-4a6f-8fdb-bf3265b3de66)
 
 
 
 [Book review submission page]
 
-![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/671a6ec2-59e7-4c42-b0df-21cd83e718e6)
+![Add_New_Review_Page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/a711bd2b-1272-4116-bd44-09ef902fb607)
+
 
 
 [My reviews ]
 
 
-![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/03025c63-3766-4bb0-807a-13bd3de9869c)
+![My_Reviews_Page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/76ba2730-7bec-40b1-b80d-3139f7f51b69)
 
 
 
-[Search result page]
+[Edit review page]
+
+![Edit_Review_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/a8be9261-6135-43ce-ab39-e4bf2db1c659)
 
 
-![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/2f9c7884-376c-4939-8d9b-74c8d2d52e96)
 
 
 

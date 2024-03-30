@@ -32,9 +32,7 @@ const register = async (req, res) => {
 };
 
 // ## POST /auth/login
-// -   Generates and responds a JWT for the user to use for future authorization.
-// -   Expected body: { email, password }
-// -   Response format: { token: "JWT_TOKEN_HERE" }
+
 const login = async (req, res) => {
   const { email, password } = req.body;
 

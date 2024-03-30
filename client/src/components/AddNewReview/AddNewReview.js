@@ -58,7 +58,6 @@ function AddNewReview() {
 
     try {
       const response = await axios.post(`http://localhost:8080/reviews`, newReview);
-      console.log(response)
 
     } catch (error) {
       console.log("failed to add review: " + error)

@@ -1,24 +1,5 @@
 const knex = require("knex")(require("../knexfile"));
 
-// Get all books with average star values
-// const index = async (req, res) => {
-//   try {
-//     const data = await knex("books")
-//       .select(
-//         "books.id",
-//         "books.title",
-//         "books.author",
-//         "books.cover",
-//         knex.raw("AVG(reviews.stars) AS average_stars")
-//       )
-//       .join("reviews", "books.id", "reviews.book_id")
-//       .groupBy("books.id", "books.title", "books.author", "books.cover");
-//     res.status(200).json(data);
-//   } catch (err) {
-//     res.status(400).send(`Error retrieving books: ${err}`);
-//   }
-// };
-
 const index = async (req, res) => {
   try {
     // Get pagination parameters from query string or use defaults
@@ -37,7 +18,7 @@ const index = async (req, res) => {
       )
       .join("reviews", "books.id", "reviews.book_id")
       .groupBy("books.id", "books.title", "books.author", "books.cover")
-      .orderBy("books.id") // Ensure consistent ordering for pagination
+      .orderBy("books.id") 
       .limit(pageSize)
       .offset(offset);
 

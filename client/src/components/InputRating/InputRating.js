@@ -12,7 +12,6 @@ function InputRating({ label, name, preloadValue,status }) {
   };
 
   const handleHoverChange = (ratingValue) => {
-    console.log("handleHoverChange: " + ratingValue);
     setRating(ratingValue);
   };
 

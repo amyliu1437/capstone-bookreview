@@ -13,7 +13,6 @@ function ReviewCard({ ReviewCardItem, userId }) {
     event.preventDefault();
     try {
       const response = await axios.delete(`http://localhost:8080/reviews/${ReviewCardItem.id}`);
-      console.log(response)
     } catch (error) {
       console.log(error)
     }

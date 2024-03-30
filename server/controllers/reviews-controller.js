@@ -33,7 +33,7 @@ const getReviewById = async (req, res) => {
 
 // Post a review to the review list
 const post = async (req, res) => {
-  const { bookId, user_id, stars, title, content } = req.body; // Extract review data including bookId from request body
+  const { bookId, user_id, stars, title, content } = req.body; 
 
   try {
     // Insert the review into the database
@@ -54,8 +54,8 @@ const post = async (req, res) => {
 
 
 const update = async (req, res) => {
-  const reviewId = req.params.id; // Assuming reviewId is passed as a route parameter
-  const { stars, title, content } = req.body; // Assuming these fields are sent in the request body
+  const reviewId = req.params.id; 
+  const { stars, title, content } = req.body; 
 
   try {
     // Check if the review exists

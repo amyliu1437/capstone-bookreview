@@ -18,9 +18,9 @@ function InputRating({ label, name, preloadValue,status }) {
 
   return (
     <div className="rating-input">
-      <label className="rating-input__label">
+      <h3 className="rating-input__label">
         {label}
-      </label>
+      </h3>
       <div className="rating-input__value" >
         {[...Array(5)].map((_, i) => {
           const ratingValue = i + 1;

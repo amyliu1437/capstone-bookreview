@@ -1,36 +1,37 @@
 @import '../../styles/global';
 
-.upload-page{
+.add-page{
   width: 100%;
   margin: 0;
   padding: 0;
-
   @include tablet{
     padding: 0 3rem;
     }
-
-  @include desktop{
+    @include desktop{
       padding: 0 10%;
-  }
+    }
 }
 
-
-.upload-review{
+.add-review{
+  // background-color: $seccondaryGray;
   display: flex;
   flex-direction: column;
-  
+
   &__title{
-    margin: 8px 0;
+    margin: 8px 10px;
+    font-weight: bold;
+    font-size: 25px;
+    color:$primeBlack;
   }
   &__content{
     display: flex;
     flex-direction: column;
-    
+    background-color: $primeWhite;
+    margin-bottom: 32px;
 
     @include tablet{
       flex-direction: row;
-      justify-content: space-between;
-      align-items:flex-start;
+      justify-content: space-around;
     }
 
   }
@@ -55,9 +56,11 @@
 
   @include tablet{
     width: 30%;
-    align-self: flex-start;
-    border-bottom: none;
-   
+    border-bottom:none;
+  }
+
+  &__label{
+    margin-top: 0;
   }
 
   &__image{
@@ -71,24 +74,16 @@
   }
 }
 
-.upload-form{
+.add-form{
   display: flex;
   flex-direction: column;
-  
+
   &__content{
     display: flex;
     flex-direction: column;
 
   }
-  
-  &__title{
-    font-size: 1.25rem;
-    @include tablet{
-      font-size: 1.5rem;
-      padding-bottom: 16px;
-      border-bottom: 1px solid $secondaryMercury;
-    }
-  }
+
   &__label {
     margin-bottom: 0.5rem;
   }
@@ -100,11 +95,14 @@
     padding: 0.5rem;
     font-size: inherit;
     height: 5rem;
-
+    
     @include tablet{
-      height: 8rem;
+      height: 30rem;
     }
 
+    &::-webkit-input-placeholder{
+      color: $primeBlack;
+     }
     &:focus{
       border: 2px solid $secondaryDarkBlue;
       outline: none;
@@ -114,7 +112,7 @@
 
   &__tip{
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 1rem;
   }
 
   &__controller{
@@ -122,11 +120,6 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     padding: 16px 0;
-
-    @include tablet{
-      width: 60%;
-      align-self: flex-end;
-    }
   }
 
   &__button{
@@ -136,12 +129,8 @@
     border: 1px solid $secondaryMercury;
     border-radius: 4px;
     height: 36px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 36px;
-
-    &:hover{
-      background-color: $secondaryDarkBlue;
-    }
 
   }
 
@@ -150,7 +139,7 @@
     color: red;
   }
 
- &__hidden {
+  &__hidden {
     display: none;
   }
 }

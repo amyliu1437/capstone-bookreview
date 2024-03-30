@@ -2,6 +2,13 @@
 @import './font';
 @import './maxin';
 
+body {
+    font-family: "EB Garamond";
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $bodyBackGray;
+}
 h1 {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -23,13 +30,14 @@ h2{
     }
 }
 
-h3{ 
+h3 { 
     font-size: 0.813rem;
     line-height: 1.25rem;
     font-weight:600;
 
     @include tablet{
-        font-size: 0.91rem;
+        font-size: 1rem;
         line-height: 1.75rem;
     }
 }
+

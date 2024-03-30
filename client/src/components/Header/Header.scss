@@ -4,6 +4,8 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  border-bottom: 1px solid $secondaryMercury;
+
 }
 
 
@@ -15,7 +17,6 @@
   padding: 0 16px;
   background-color: none;
   height: 100px;
-  border-bottom: 1px solid $secondaryMercury;
   @include tablet{
     margin: 0 3rem;
     padding: 0;

@@ -84,22 +84,21 @@ function EditReviewItem() {
 
 
   return (
-    <div className="upload-page">
-      <div className="upload-review">
-        <h1 className="upload-review__title">Edit Book Review </h1>
-        <div className="upload-review__content" >
-          <section className="book-info">
-            <h2 className="book-info__label">Taget Book</h2>
-            <img className="book__image" src={bookcover} alt='bookcover.svg' />
-          </section>
+    <div className="edit-page">
+      <div className="edit-review">
+        <h1 className="edit-review__title">Edit Book Review </h1>
+        <div className="edit-review__content" >
+          <div className="edit-book-info">
+            <img className="edit-book__image" src={bookcover} alt='bookcover.svg' />
+          </div>
           {reviewData && (
-            <section className="upload-review__form">
+            <section className="edit-review__form">
 
-              <form className="upload-form" onSubmit={handlerReviewUpdate}>
-
+              <form className="edit-form" onSubmit={handlerReviewUpdate}>
+                <h2 className="edit-form__title">Please Edit Your Review </h2>
                 <InputRating
                   name="rating"
-                  label="Please GIve your Star"
+                  label="Rating This Book with Stars"
                   preloadValue={reviewData.stars}
                   status={starError}
                 />
@@ -112,19 +111,19 @@ function EditReviewItem() {
                   status={titleError}
                 />
 
-                <div className="upload-form__content">
-                  <label htmlFor="content" className="upload-form__label"> Review Content: </label>
+                <div className="edit-form__content">
+                  <h3 htmlFor="content"> Review Content: </h3>
                   <textarea
                     type="textarea"
                     name="content"
-                    className="upload-form__input"
+                    className="edit-form__input"
                     defaultValue={reviewData.content}
                   />
-                  <label className={contentError ? "upload-form__error" : "upload-form__hidden"}>{contentError} </label>
-                  <p className className="upload-form__tip" >You can input up to 2000 characters</p>
+                  <label className={contentError ? "edit-form__error" : "edit-form__hidden"}>{contentError} </label>
+                  <p className className="edit-form__tip" >You can input up to 2000 characters</p>
                 </div>
-                <div className="upload-form__controller">
-                  <button className="upload-form__button" type="submit">Submit</button>
+                <div className="edit-form__controller">
+                  <button className="edit-form__button" type="submit">Submit</button>
                 </div>
               </form>
             </section>

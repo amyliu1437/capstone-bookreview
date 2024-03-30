@@ -38,7 +38,7 @@ function BookListPage(){
   return (
     <div className="booklist-container">
       <section className="booklist">
-        <h1 className="booklist__title">BookList</h1>
+        <h1 className="booklist__title">Book List</h1>
         
         <div className="booklist__list">
           {bookList.map((book) => (
@@ -48,9 +48,9 @@ function BookListPage(){
 
          {/* Pagination controls */}
           <div className="pagination">
-          <button className="pagination__button" onClick={handlePrevPage}>Previous</button>
+          <button className="pagination__button" onClick={handlePrevPage}> Previous Page </button>
           <span className="pagination__page">Page {page}</span>
-          <button className="pagination__button" onClick={handleNextPage}>Next Page</button>
+          <button className="pagination__button" onClick={handleNextPage}> Next Page </button>
         </div>
 
       </section>

@@ -2,7 +2,7 @@ import './Header.scss';
 import { useState, useEffect, useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../App';
-import logoImage from '../../assets/Image/logo.png'
+import logoImage from '../../assets/Image/logo-with-bg.png'
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);

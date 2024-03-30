@@ -3,9 +3,7 @@
 .rating-input{
   display: flex;
   flex-direction: column;
-  &__label{
-    font-weight: 400;
-  }
+
   &__value{
     margin: 8px 0;
   }

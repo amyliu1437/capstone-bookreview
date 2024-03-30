@@ -1,6 +1,6 @@
 @import '../../styles/global';
 
-.upload-page{
+.edit-page{
   width: 100%;
   margin: 0;
   padding: 0;
@@ -12,23 +12,26 @@
     }
 }
 
-.upload-review{
-  background-color: $seccondaryGray;
+.edit-review{
+  // background-color: $seccondaryGray;
   display: flex;
   flex-direction: column;
 
   &__title{
-    margin: 8px 0;
+    margin: 8px 10px;
+    font-weight: bold;
+    font-size: 25px;
+    color:$primeBlack;
   }
   &__content{
     display: flex;
     flex-direction: column;
     background-color: $primeWhite;
+    margin-bottom: 32px;
 
     @include tablet{
       flex-direction: row;
       justify-content: space-around;
-      align-items: center;
     }
 
   }
@@ -37,10 +40,15 @@
     display: flex;
     flex-direction: column;
     padding: 16px 0;
+
+    @include tablet{
+      width: 65%;
+      align-self: flex-start;
+    }
   }
 }
 
-.book-info{
+.edit-book-info{
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid $secondaryMercury;
@@ -51,22 +59,20 @@
     border-bottom:none;
   }
 
-  &__label{
-    margin-top: 0;
-  }
-
   &__image{
     width: 80%;
     align-self: center;
+    
 
     @include tablet{
       width: 100%;
+      justify-self: flex-start;
     }
 
   }
 }
 
-.upload-form{
+.edit-form{
   display: flex;
   flex-direction: column;
 
@@ -89,7 +95,7 @@
     height: 5rem;
     
     @include tablet{
-      height: 8rem;
+      height: 30rem;
     }
 
     &::-webkit-input-placeholder{
@@ -104,7 +110,7 @@
 
   &__tip{
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 1rem;
   }
 
   &__controller{

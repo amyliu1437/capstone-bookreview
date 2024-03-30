@@ -67,28 +67,28 @@ function AddNewReview() {
   };
 
   return (
-    <div className="upload-page">
-      <div className="upload-review">
-        <h1 className="upload-review__title">Add New Book Review </h1>
-        <div className="upload-review__content" >
+    <div className="add-page">
+      <div className="add-review">
+        <h1 className="add-review__title">Add New Book Review </h1>
+        <div className="add-review__content" >
           <section className="book-info">
             <img className="book-info__image" src={bookcover} alt='bookcover.svg' />
           </section>
-          <section className="upload-review__form">
-            <form className="upload-form" onSubmit={handlerReviewSubmit}>
+          <section className="add-review__form">
+            <form className="add-form" onSubmit={handlerReviewSubmit}>
 
-              <h2 className="upload-form__title">Please Input your Review </h2>
-              <InputRating name="rating" label="Rating Star" status={starError} />
+              <h2 className="add-form__title">Please Input Your Review </h2>
+              <InputRating name="rating" label="Rating This Book with Stars" status={starError} />
               <Input type="text" name="title" label="Review Title:" status={titleError} />
-              <div className="upload-form__content">
-                <label htmlFor="content" className="upload-form__label"> Review Content: </label>
-                <textarea type="textarea" name="content" className="upload-form__input" />
-                <label className={contentError?"upload-form__error":"upload-form__hidden"}> {contentError} </label>            
-                <p className className="upload-form__tip" >You can input up to 2000 characters</p>
+              <div className="add-form__content">
+                <h3 htmlFor="content">Review Content: </h3>
+                <textarea type="textarea" name="content" className="add-form__input" />
+                <label className={contentError?"add-form__error":"add-form__hidden"}> {contentError} </label>            
+                <p className className="add-form__tip" >You can input up to 2000 characters</p>
               </div>
 
-              <div className="upload-form__controller">
-                <button className="upload-form__button" type="submit">Submit</button>
+              <div className="add-form__controller">
+                <button className="add-form__button" type="submit">Submit</button>
               </div>
             </form>
           </section>

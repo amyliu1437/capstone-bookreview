@@ -3,21 +3,29 @@
 .review-card{
 
   display: flex;
-  flex-direction: row;
+  flex-direction:column;
   justify-content: space-between;
-  border-top: 1px solid $secondaryMercury;
   border-bottom: 1px solid $secondaryMercury;
   padding: 16px;
-  &__image{
-    width:40%;
-    height: 50%;
+  vertical-align: top;
+  @include tablet{
+    flex-direction: row;
+  }
+
+  &__imagediv {
+    width: 100%;
+    text-align: center;
     @include tablet{
-      width: 25%;
-      height: auto;
+      width: 40%;
     }
   }
+  
+  &__image{
+    object-fit:contain;
+    width:90%;
+  }
   &__right{
-    width:55%;
+    width:100%;
     @include tablet{
       width: 70%;
     }

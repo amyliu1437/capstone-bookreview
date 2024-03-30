@@ -7,12 +7,12 @@
 
 .top-booklist{
   padding: 16px;
-  background-color: $seccondaryGray;
-  background-image: url('../../assets/Image/hero-bg-img.svg');
-  background-repeat: no-repeat;
+
   @include tablet{
-    padding: 32px 10%;
+    padding: 32px;
   }
+
+
   &__list{
     display: flex;
     flex-wrap: wrap;
@@ -24,6 +24,11 @@
       flex-direction: row;
       flex-wrap: wrap;
     }
+  }
+
+  &__title{
+    margin: 0;
+    padding: 16px 0;
   }
 
 }

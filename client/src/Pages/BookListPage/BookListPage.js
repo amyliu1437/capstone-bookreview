@@ -7,47 +7,7 @@ import searchIcon from '../../assets/Icons/search.svg';
 
 function BookListPage(){
 
-//   const [query, setQuery] = useState(null);
-//   const [bookList, setBookList] = useState([]);
-//   useEffect(() => {
-//     const getBookList = async () => {
-//       try {
-//         const response = await axios.get("http://localhost:8080/books")
-//         setBookList(response.data);
-//       } catch (error) {
-//         console.log(error)
-//       }
-//     }
-//     getBookList();
-//   }, []);
-
-//   return(
-//     <div className="booklist-container">
-//       <section className="booklist">
-//         <h1 className="booklist__title">BookList</h1>
-//         {/* <div>
-//         <input         
-//         type="text" 
-//         placeholder="Enter author or title" 
-//         value={query}
-//         onChange={(e) => setQuery(e.target.value)} />
-
-//         <Link to='/books/${query}'>
-//         <img src={searchIcon} alt={searchIcon.svg} />
-//         </Link> 
-        
-//         </div> */}
-//         <div className="booklist__list">
-//         {bookList.map((book) => (
-//                     <BookCard book={book} key={book.id}/>
-//         ))}
-//         </div>
-//       </section>
-//     </div>
-//   )
-// }
-
-const [page, setPage] = useState(1);
+  const [page, setPage] = useState(1);
   
   const [bookList, setBookList] = useState([]);
   const pageSize = 20;
@@ -56,7 +16,6 @@ const [page, setPage] = useState(1);
     const getBookList = async () => {
       try {
         const response = await axios.get(`http://localhost:8080/books?page=${page}&pageSize=${pageSize}`);
-        console.log(response.data)
         // The paginated data is returned in a 'data' property
         setBookList(response.data.data); 
       } catch (error) {

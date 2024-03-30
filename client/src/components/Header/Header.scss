@@ -17,8 +17,11 @@
   height: 100px;
   border-bottom: 1px solid $secondaryMercury;
   @include tablet{
-    padding: 0 10%;
-
+    margin: 0 3rem;
+    padding: 0;
+  }
+  @include desktop{
+    margin: 0 10%;
   }
 }
 
@@ -67,6 +70,8 @@
         text-align: right;
        
     }
+
+   
   }
 
   &__item{
@@ -75,6 +80,7 @@
     font-size: 1rem;
     color: $primeBlue;
     font-weight: 600;
+    padding: 8px;
     @include tablet{
       font-size: 1.13rem;
     }
@@ -121,11 +127,6 @@
     flex-direction: row;
     justify-content:flex-end;
     align-items:center;
-    font-size: 1rem;
-    color: $primeBlue;
-    @include tablet{
-      font-size: 1.2rem;
-    }
   
   }
   
@@ -150,6 +151,10 @@
      @include tablet{
       font-size: 1.2rem;
     }
+     &:hover {
+        color: $primeWhite;
+        background-color:$secondaryDarkBlue;
+      }
   }
 }
 

@@ -15,7 +15,6 @@ function BookDetails() {
       try {
         const response = await axios.get(`http://localhost:8080/books/${selectedId}`);
         setBookSelected(response.data);
-        // console.log(response.data);
       } catch (error) {
         console.log(error)
       }
@@ -24,12 +23,10 @@ function BookDetails() {
     const getBookReviews = async () => {
       try {
         const response = await axios.get(`http://localhost:8080/books/${selectedId}/reviews`);
-        console.log(response.data);
         setBookReviews(response.data);
       } catch (error) {
         console.log(error)
       }
-
     }
     getBook();
     getBookReviews();
@@ -38,7 +35,7 @@ function BookDetails() {
   return (
     <div className="page-container">
       <div className="detail-page">
-        {/* <h2 className="detail-page__title" >Book Detail</h2> */}
+        <h2 className="detail-page__title" >Book Details</h2>
         <section className="single-book">
           <div className="single-book__left" >
             <img className="book__image" src={bookSelected.cover} alt='bookcover.svg' />
@@ -77,7 +74,7 @@ function BookDetails() {
         </section>
 
         <section className="reviews-section">
-          <h2 className="reviews-section__title">Reviews to This Book</h2>
+          <h2 className="reviews-section__title">Reviews to this book</h2>
           <div className="reviews-section__list">
             {bookReviews.map((review) => (
               <ReviewItem key={review.id} review={review}

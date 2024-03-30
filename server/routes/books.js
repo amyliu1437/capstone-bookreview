@@ -20,9 +20,6 @@ router
   .route("/:id/reviews")
   .get(booksController.reviewsOfOneBook);
 
-  router
-  .route('/search')
-  .get(booksController.searchBooks);
 
   
 module.exports = router;

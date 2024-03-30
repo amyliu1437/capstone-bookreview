@@ -22,9 +22,9 @@ function ReviewCard({ ReviewCardItem, userId }) {
 
   return (
     <div className="review-card">
-     
+      <div className="review-card__imagediv">
         <img className="review-card__image" src={ReviewCardItem.cover} />
-
+      </div>
 
       <section className="review-card__right">
 

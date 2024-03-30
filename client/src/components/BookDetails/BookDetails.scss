@@ -4,15 +4,26 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  @include tablet{
+    padding: 0 3rem;
+  }
+  @include desktop{
+      padding: 0 10%;
+  }
 }
 
 .detail-page{
   display: flex;
   flex-direction: column;
   padding: 16px;
-  background-color: $seccondaryGray;
+  padding-bottom: 0;
+  &__title{
+    border-bottom: 1px solid $secondaryMercury;
+    margin-bottom: 0;
+    padding-bottom: 16px;
+  }
   @include tablet{
-    padding: 32px 10%;
+    padding: 32px 10% 0 10%;
   }
 }
 
@@ -35,6 +46,7 @@
     @include tablet{
       width: 30%;
       text-align: center;
+      align-self: flex-start;
     }
 
   }
@@ -145,6 +157,10 @@
   background-color: $primeWhite;
   display: flex;
   flex-direction: column;
+
+  &__title{
+    padding-left: 16px;
+  }
 
   &__list{
     display: flex;

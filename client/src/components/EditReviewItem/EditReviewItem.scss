@@ -4,18 +4,19 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  @include tablet{
+    padding: 0 3rem;
+    }
+    @include desktop{
+      padding: 0 10%;
+    }
 }
 
 .upload-review{
   background-color: $seccondaryGray;
   display: flex;
   flex-direction: column;
-  padding: 16px;
 
-  @include tablet{
-    padding: 16px 10% 
-  };
-  
   &__title{
     margin: 8px 0;
   }
@@ -47,6 +48,7 @@
 
   @include tablet{
     width: 30%;
+    border-bottom:none;
   }
 
   &__label{

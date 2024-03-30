@@ -4,9 +4,8 @@ const jwt = require("jsonwebtoken");
 
 // ## POST /auth/register
 // - Creates a new user.
-// - Expected body: {name,email, password }
-const register= async (req, res) => {
-  const {name, email,  password } = req.body;
+const register = async (req, res) => {
+  const { name, email, password } = req.body;
 
   if (!name || !email || !password) {
     return res.status(400).send("Please enter the required fields");
@@ -18,14 +17,14 @@ const register= async (req, res) => {
   const newUser = {
     name,
     email,
-    password:hashedPassword,
-    regist_time:new Date().toISOString().slice(0, 19).replace('T', ' ')
+    password: hashedPassword,
+    regist_time: new Date().toISOString().slice(0, 19).replace('T', ' ')
   };
 
   // Insert it into our database
   try {
     await knex("users").insert(newUser);
-    res.status(201).send("Registered successfully" );
+    res.status(201).send("Registered successfully");
   } catch (error) {
     console.error(error);
     res.status(400).send("Failed registration");
@@ -36,7 +35,7 @@ const register= async (req, res) => {
 // -   Generates and responds a JWT for the user to use for future authorization.
 // -   Expected body: { email, password }
 // -   Response format: { token: "JWT_TOKEN_HERE" }
-const login= async (req, res) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -62,15 +61,39 @@ const login= async (req, res) => {
     { expiresIn: "24h" }
   );
 
-  res.send({ 'token':token, 'name':user.name, 'id':user.id });
+  res.send({ 'token': token, 'name': user.name, 'id': user.id });
+};
+
+const getSingleUser = async (req, res) => {
+
+  const userId = req.params.id
+
+  try {
+    const user = await knex('users')
+      .select(
+        "users.id",
+        "users.name"
+      )
+      .where("users.id", userId)
+      .first();
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.error('Error fetching user:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 };
 
 
 
 
 const getReviewsList = async (req, res) => {
-  const userId = req.params.id 
-  console.log("userId="+userId);
+  const userId = req.params.id
+
   try {
     // Fetch all reviews related to the user
     const reviews = await knex("reviews")
@@ -86,10 +109,9 @@ const getReviewsList = async (req, res) => {
         "books.author",
         "books.publisher"
       )
-      .join("books","reviews.book_id","books.id")
+      .join("books", "reviews.book_id", "books.id")
       .orderBy("reviews.review_time", "desc")
-      .where("reviews.user_id", userId)
-      .limit(10);
+      .where("reviews.user_id", userId);
 
     if (!reviews || reviews.length === 0) {
       return res.status(404).json({ error: "No reviews found for this user" });
@@ -105,7 +127,7 @@ module.exports = {
   register,
   login,
   getReviewsList,
-  
+  getSingleUser,
 };
 
 

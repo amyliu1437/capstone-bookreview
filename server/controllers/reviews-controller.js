@@ -45,7 +45,7 @@ const post = async (req, res) => {
       content: content,
       review_time: new Date().toISOString().slice(0, 19).replace('T', ' ')
     });
- console.log(newReview)
+    // console.log(newReview)
     res.status(201).json({ message: "Review added successfully", newReview });
   } catch (err) {
     res.status(400).send(`Error posting review: ${err}`);

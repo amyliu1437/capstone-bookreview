@@ -30,10 +30,7 @@ Readers:
 3. **User Reviews**:
    - View a personalized list of reviews submitted by the user.
    - Easily access and revisit reviews for reference and sharing.
-
-4. **User Profiles**:
-   - Create a personalized user profile to track reading history and favorite books.
-   - Connect with other users, follow their reviews, and engage in discussions.
+   - Have chance to update or delete reviews anytime.
 
 ## Implementation
 
@@ -49,6 +46,7 @@ Readers:
 ### APIs
 
 No external APIs will be used for the first sprint.
+Basic book information comes from NewYork Times book API--Top popular book list in March.
 
 ### Sitemap
 
@@ -58,6 +56,7 @@ No external APIs will be used for the first sprint.
 - Register page
 - Login page
 - Book review submission page
+- Book review edit page
 - My Reviews
 
 ### Mockups
@@ -112,15 +111,22 @@ No external APIs will be used for the first sprint.
 
 ### Data
 
-- Users: user_id, username, email, password
-- Books: book_id, title, author, genre, synopsis
-- Reviews: review_id, user_id, book_id, rating, review_text
+- Users: user_id, username, email, password,token
+- Books: book_id, title, author, cover, publisher, summary
+- Reviews: review_id, user_id, book_id, stars, review_time, title, content
 
 ### Endpoints
 
 - GET /books: Retrieve a list of books with optional filters.
-- GET /books/:id: Retrieve detailed information about a specific book.
+- GET /books/:bookid: Retrieve detailed information about a specific book.
+- GET /books/topbooks: Retrieve top 8 books with highest rating stars.
+- GET /books/:bookid/reviews: Retrieve all the reviews to a singal book.
 - POST /reviews: Submit a review for a book.
+- GET /reviews/latestreview: Retrieve the latest review together with book information on the website.
+- GET /reviews/:reviewid: Retrieve a single review item for editing input.
+- PUT /reviews/:reviewid: Edit one exist review.
+- DELETE /reviews/:reviewid: Delete one review item by id.
+- GET /users/:id: Retrieve a single user information.
 - GET /users/:id/reviews: Retrieve a list of reviews submitted by the user.
 - POST /users/register`: Register a new user.
 - POST /users/login`: Log in an existing user
@@ -140,10 +146,11 @@ JWT tokens will be stored in localStorage.
 6. Deploy client and server projects for production use.
 7. Conduct testing and bug fixes to ensure a seamless user experience.
 8. Develop user registration and login functionality.
-9. Explore additional features such as pagin and search options.
+9. Explore additional features such as pagination options.
 
 ## Nice-to-haves
 
+- Introduce the search function for user to search books in the list.
 - Integration with external book APIs for expanded book listings.
 - Allow user to search and upload books they want to review.
 - Add the function that user can edit his profile item.

@@ -1,3 +1,4 @@
+/* To create database and tables, the proper permission must be granted in advance */
 CREATE DATABASE IF NOT EXISTS bookreview CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 use bookreview;

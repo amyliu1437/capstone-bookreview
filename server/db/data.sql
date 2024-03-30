@@ -1,3 +1,4 @@
+/* The execute the sql statements, the database and tables defined in schema.sql must be created in advance */
 use bookreview;
 insert into users (id,name,email,password,token) values(101,'Alice Smith','alice.smith@example.com','P@ssw0rd1','eyJhbGciOiJIUzI1NiIsInR5');
 insert into users (id,name,email,password,token) values(102,'John Doe','john.doe@example.com','Doe1234!','eyJhbGciOiJIUzI1NiIsInR5');

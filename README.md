@@ -63,16 +63,18 @@ Basic book information comes from NewYork Times book API--Top popular book list 
 
 [Home page]
 
-![Home_Page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/a6fdcb39-5e2b-49fe-b5af-5bebfedcb741)
+![Home_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/a8d832be-0d0e-4893-80d9-c3145d171a18)
+
 
 [Books listing page]
 
-![Book_List_Page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/7737af57-6bda-46b6-8afc-3be71f848458)
+![Book_List_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/d6134a94-85fa-4e9b-af43-471258c01ed8)
+
 
 
 [Book details page]
 
-![Book_Detail_Page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/2b6e5898-59dc-4208-944c-aad19363faa5)
+![Book_Details](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/12ef7e4b-8ee0-41bc-8627-9285a647f43c)
 
 
 [Register page]
@@ -89,24 +91,23 @@ Basic book information comes from NewYork Times book API--Top popular book list 
 
 [Book review submission page]
 
-![Add_New_Review_Page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/a711bd2b-1272-4116-bd44-09ef902fb607)
+![Add_Review](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/7d34f844-d920-401e-95cb-b6c15a674b96)
+
 
 
 
 [My reviews ]
 
 
-![My_Reviews_Page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/76ba2730-7bec-40b1-b80d-3139f7f51b69)
+![My_Review](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/01d5967f-85a8-42d4-93f3-2dc8118bbe39)
+
 
 
 
 [Edit review page]
 
-![Edit_Review_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/a8be9261-6135-43ce-ab39-e4bf2db1c659)
 
-
-
-
+![Edit_review](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/ab8f1192-0b80-48d1-ae5e-60eeee8fa7cf)
 
 
 

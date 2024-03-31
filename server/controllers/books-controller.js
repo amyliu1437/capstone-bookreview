@@ -97,7 +97,6 @@ const findOneBook = async (req, res) => {
 // Get all reviews for a single book
 const reviewsOfOneBook = async (req, res) => {
   const bookId  = req.params.id;
-  console.log(bookId)
 
   try {
     // Fetch all reviews related to the book

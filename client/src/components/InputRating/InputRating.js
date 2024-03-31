@@ -8,7 +8,6 @@ function InputRating({ label, name, preloadValue, status }) {
   const handleRatingChange = (event) => {
     const ratingValue = parseInt(event.target.value);
     setRating(ratingValue);
-    console.log("Rating changed:", ratingValue);
   };
 
   const handleHoverChange = (ratingValue) => {

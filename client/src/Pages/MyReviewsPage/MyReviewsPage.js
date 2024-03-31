@@ -27,7 +27,6 @@ function MyReviewsPage() {
       try {
         const response = await axios.get(`http://localhost:8080/users/${selectedUserId}`);
         setUserInfo(response.data);
-        console.log()
       } catch (error) {
         console.log(error)
       }

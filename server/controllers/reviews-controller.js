@@ -45,7 +45,6 @@ const post = async (req, res) => {
       content: content,
       review_time: new Date().toISOString().slice(0, 19).replace('T', ' ')
     });
-    // console.log(newReview)
     res.status(201).json({ message: "Review added successfully", newReview });
   } catch (err) {
     res.status(400).send(`Error posting review: ${err}`);
@@ -127,7 +126,6 @@ const latestReview = async (req, res) => {
       .orderBy("reviews.review_time", "desc")
       .first(); // Fetch only the latest review
 
-      console.log(latestReviewBookInfo);
     if (!latestReviewBookInfo) {
       return res.status(404).json({ error: "No reviews found" });
     }

@@ -13,7 +13,6 @@ const Header = () => {
   function handleLogout() {
     setUser(null);
     localStorage.clear();
-    console.log("handlLogout");
     navigate("/");
   };
 

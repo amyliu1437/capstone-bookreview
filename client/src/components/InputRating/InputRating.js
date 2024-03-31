@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./InputRating.scss";
 
-function InputRating({ label, name, preloadValue,status }) {
+function InputRating({ label, name, preloadValue, status }) {
   const [rating, setRating] = useState(preloadValue);
   const [hover, setHover] = useState(0);
 
@@ -46,9 +46,9 @@ function InputRating({ label, name, preloadValue,status }) {
           );
         })}
       </div>
-      <label className={status&&status.length>0?"rating-input__error":"rating-input__hidden"}>
-                {status}
-            </label>
+      <label className={status && status.length > 0 ? "rating-input__error" : "rating-input__hidden"}>
+        {status}
+      </label>
     </div>
   );
 }

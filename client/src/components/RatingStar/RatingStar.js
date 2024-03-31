@@ -23,7 +23,6 @@ const RatingStar = ({ rating }) => {
 
     const emptyStars = 5 - stars.length;
     for (let i = 0; i < emptyStars; i++) {
-      // stars.push(<span key={`empty-${i}`} className="star star--empty">&#9733;</span>);
       stars.push(<span key={`empty-${i}`}><img src={starEmpty} className="star"/></span>);
     }
 

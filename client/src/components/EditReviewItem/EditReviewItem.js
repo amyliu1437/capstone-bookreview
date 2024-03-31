@@ -123,7 +123,7 @@ function EditReviewItem() {
                   <p className className="edit-form__tip" >You can input up to 2000 characters</p>
                 </div>
                 <div className="edit-form__controller">
-                  <button className="edit-form__button" type="submit">Submit</button>
+                  <button className="edit-form__button" type="submit">Edit</button>
                 </div>
               </form>
             </section>

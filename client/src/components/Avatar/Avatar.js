@@ -15,7 +15,7 @@ function Avatar({ name }) {
       .substring(0, 2);
 
   return (
-    <div className="avatar">
+    <div className="avatar" title={name}>
       {initials}
     </div>
   );

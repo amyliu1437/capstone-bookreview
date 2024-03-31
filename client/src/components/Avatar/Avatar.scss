@@ -1,6 +1,8 @@
+@import "../../styles/global";
+
 .avatar {
-  background-color: darkblue;
-  color: white;
+  background-color: $primeBlue;
+  color: $primeWhite;
   width: 36px;
   height: 36px;
   border-radius:50%;

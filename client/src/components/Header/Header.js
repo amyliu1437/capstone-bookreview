@@ -2,6 +2,7 @@ import './Header.scss';
 import { useState, useEffect, useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../App';
+import Avatar from '../Avatar/Avatar';
 import logoImage from '../../assets/Image/logo-with-bg.png'
 
 const Header = () => {
@@ -12,6 +13,7 @@ const Header = () => {
   function handleLogout() {
     setUser(null);
     localStorage.clear();
+    console.log("handlLogout");
     navigate("/");
   };
 
@@ -63,14 +65,13 @@ const Header = () => {
         <div className="function-bar">
           <div className="menu" >
             <div className="menu__items">
+              {user &&<Avatar name={user.name} />}
               {user &&
-                <NavLink className="menu__username">
-                  {user.name.split(" ")[0]}
-                </NavLink>}
-              {user &&
-                <NavLink className="menu__link" onClick={handleLogout}>
+                <div className="menu__link">
+                <span className="menu__link--button" onClick={handleLogout}>
                   Logout
-                </NavLink>}
+                </span>
+                </div>}
             </div>
             {!user &&
               <NavLink className="menu__link" to={"/login"}>

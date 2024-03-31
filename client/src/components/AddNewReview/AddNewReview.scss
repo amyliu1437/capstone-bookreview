@@ -3,7 +3,7 @@
 .add-page{
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 32px 16px;
   @include tablet{
     padding: 0 3rem;
     }
@@ -39,7 +39,7 @@
   &__form{
     display: flex;
     flex-direction: column;
-    padding: 16px 0;
+    padding: 16px;
 
     @include tablet{
       width: 65%;
@@ -52,15 +52,11 @@
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid $secondaryMercury;
-  padding: 16px 0;
+  padding: 16px;
 
   @include tablet{
     width: 30%;
     border-bottom:none;
-  }
-
-  &__label{
-    margin-top: 0;
   }
 
   &__image{

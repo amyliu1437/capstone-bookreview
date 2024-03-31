@@ -31,8 +31,18 @@ function ReviewCard({ ReviewCardItem, userId }) {
           <div className="review-book">
             <span className="review-book__title">{ReviewCardItem.title} </span>
             <div className="review-book__info">
-              <p className="review-book__detail">By <span className="review-book__detail--black">{ReviewCardItem.author}</span> </p>
-              <p className="review-book__detail">Publisher: <span className="review-book__detail--black">{ReviewCardItem.publisher}</span> </p>
+              <p className="review-book__detail">
+                By
+                <span className="review-book__detail--black">
+                  {ReviewCardItem.author}
+                </span>
+              </p>
+              <p className="review-book__detail">
+                Publisher:
+                <span className="review-book__detail--black">
+                  {ReviewCardItem.publisher}
+                </span>
+              </p>
             </div>
           </div>
           <div className="review-body">
@@ -41,7 +51,12 @@ function ReviewCard({ ReviewCardItem, userId }) {
               <span className="review-body__title">{ReviewCardItem.rtitle}</span>
             </div>
             <div className="review-body__middle">
-              <p className="review-body__time">Reviewed on <span>{timeFormat(ReviewCardItem.review_time)}</span></p>
+              <p className="review-body__time">
+                Reviewed on
+                <span>
+                  {timeFormat(ReviewCardItem.review_time)}
+                </span>
+              </p>
 
             </div>
             <p className="review-body__text">{ReviewCardItem.content}</p>
@@ -49,14 +64,14 @@ function ReviewCard({ ReviewCardItem, userId }) {
         </div>
 
         <div className="review-card__control">
-          <div className="control-items" > 
-          <Link className="control-items__link"
-            to={`/reviews/${ReviewCardItem.id}/edit?bookcover=${ReviewCardItem.cover}`}
-          >
-            Edit
-          </Link>
-          <button className="control-items__button" onClick={handleReviewDelete}>Delete</button>
-        </div>
+          <div className="control-items" >
+            <Link className="control-items__link"
+              to={`/reviews/${ReviewCardItem.id}/edit?bookcover=${ReviewCardItem.cover}`}
+            >
+              Edit
+            </Link>
+            <button className="control-items__button" onClick={handleReviewDelete}>Delete</button>
+          </div>
         </div>
       </section>
     </div>

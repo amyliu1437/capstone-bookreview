@@ -32,6 +32,39 @@ Readers:
    - Easily access and revisit reviews for reference and sharing.
    - Have chance to update or delete reviews anytime.
 
+## How to Install
+###  Step1 : Create a project folder on your local computer.  
+###  Step2 : Initial  github and clone the repo to local.
+
+  ` git init`
+     
+   `git clone  git@github.com:amyliu1437/capstone-bookreview.git`
+   
+###  Step3 :  Setup the database.
+   Run  **schema.sql** first and then **data.sql** in mySQL to setup database.
+
+### Step 4 : Setup .env file like this:  
+
+`JWT_KEY= 126b1e0971de57e4c6cd9dc64fcf54906c721679aa5f0274819b490c1cf383f2`  
+`PORT=8080`  
+`DB_HOST=127.0.0.1 `  
+`DB_NAME=bookreview  `  
+`DB_USER=yourusername`  
+`DB_PASSWORD= yourpassword  `  
+`DB_CHARSET=utf8mb4`  
+
+### Step 5 : On seversite, run the command::
+  `npm i`  
+  `node index.js`  
+
+### Step 6 : On Client, run the command:
+  `npm i`  
+  `npm start`  
+
+### You can use test account to login if you do not want to register an account.
+  **Username**: testuser@bookreview.com  
+ **password** : 123456
+
 ## Implementation
 
 ### Tech Stack
@@ -79,13 +112,15 @@ Basic book information comes from NewYork Times book API--Top popular book list 
 
 [Register page]
 
-![SIgnup_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/373e04c8-9e69-4906-9c05-798dfc432924)
+![SignUP_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/8c5c57bb-a6dc-4c2f-aa44-8ec7e8b60990)
+
 
 
 [Login page]
 
 
-![SignIn_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/e77cb223-8f83-4a6f-8fdb-bf3265b3de66)
+![Login_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/828cb48a-2e4d-4da2-8927-8c80a69976ca)
+
 
 
 

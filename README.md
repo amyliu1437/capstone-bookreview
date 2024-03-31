@@ -34,7 +34,7 @@ Readers:
 
 ## How to Install
 ###  Step1 : Create a project folder on your local computer.  
-###  Step2 : Initial  github and clone the repo to local.
+###  Step2 : Initial  github and clone the repository to local.
 
   ` git init`
      
@@ -187,7 +187,6 @@ JWT tokens will be stored in localStorage.
 
 ## Nice-to-haves
 
-- Introduce the search function for user to search books in the list.
 - Integration with external book APIs for expanded book listings.
 - Allow user to search and upload books they want to review.
 - Add the function that user can edit his profile item.

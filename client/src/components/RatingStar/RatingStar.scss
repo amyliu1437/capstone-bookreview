@@ -1,0 +1,15 @@
+@import '../../styles/global';
+.rating {
+  display: flex; 
+  align-items: center; 
+}
+
+
+.star {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin: 10px 0px;
+}
+
+

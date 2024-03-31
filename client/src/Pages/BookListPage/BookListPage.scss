@@ -1,0 +1,57 @@
+@import '../../styles/global';
+
+.bookist-container{
+  margin: 0;
+  padding: 0;
+  @include tablet{
+    padding: 0 3rem;
+    }
+    @include desktop{
+      padding: 0 10%;
+    }
+}
+
+.booklist{
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  
+  @include tablet{
+    padding: 16px 10%;
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  &__title{
+   margin: 1rem 0;
+   padding-bottom: 16px;
+  }
+}
+
+
+.pagination{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &__page{
+    padding: 0 8px;
+  }
+
+  &__button {
+    background-color: $primeBlue;
+    color:$primeWhite;
+    border: 1px solid $secondaryMercury;
+    border-radius: 4px;
+    font-weight: 600;
+    line-height: 25px;
+    cursor: pointer;
+  }
+}

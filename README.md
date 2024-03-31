@@ -1,11 +1,11 @@
 # Project Title
 
-BookReview Hub
+BookReview Website
 
 
 ## Overview
 
-BookReview Hub is a platform designed to address the challenges faced by book lovers in finding reliable sources for book recommendations and reviews. The platform provides users with a centralized space to share their thoughts and opinions on books they've read, connect with like-minded individuals, and discover new books tailored to their interests.
+BookReview Website is a platform designed to address the challenges faced by book lovers in finding reliable sources for book recommendations and reviews. The platform provides users with a centralized space to share their thoughts and opinions on books they've read, connect with like-minded individuals, and discover new books tailored to their interests.
 
 ## Problem
 
@@ -30,40 +30,10 @@ Readers:
 3. **User Reviews**:
    - View a personalized list of reviews submitted by the user.
    - Easily access and revisit reviews for reference and sharing.
-   - Have chance to update or delete reviews anytime.
 
-## How to Install
-###  Step1 : Create a project folder on your local computer.  
-###  Step2 : Initial  github and clone the repository to local.
-
-  ` git init`
-     
-   `git clone  git@github.com:amyliu1437/capstone-bookreview.git`
-   
-###  Step3 :  Setup the database.
-   Run  **schema.sql** first and then **data.sql** in mySQL to setup database.
-
-### Step 4 : Setup .env file like this:  
-
-`JWT_KEY= 126b1e0971de57e4c6cd9dc64fcf54906c721679aa5f0274819b490c1cf383f2`  
-`PORT=8080`  
-`DB_HOST=127.0.0.1 `  
-`DB_NAME=bookreview  `  
-`DB_USER=yourusername`  
-`DB_PASSWORD= yourpassword  `  
-`DB_CHARSET=utf8mb4`  
-
-### Step 5 : On seversite, run the command::
-  `npm i`  
-  `node index.js`  
-
-### Step 6 : On Client, run the command:
-  `npm i`  
-  `npm start`  
-
-### You can use test account to login if you do not want to register an account.
-  **Username**: testuser@bookreview.com  
- **password** : 123456
+4. **User Profiles**:
+   - Create a personalized user profile to track reading history and favorite books.
+   - Connect with other users, follow their reviews, and engage in discussions.
 
 ## Implementation
 
@@ -79,7 +49,6 @@ Readers:
 ### APIs
 
 No external APIs will be used for the first sprint.
-Basic book information comes from NewYork Times book API--Top popular book list in March.
 
 ### Sitemap
 
@@ -89,81 +58,73 @@ Basic book information comes from NewYork Times book API--Top popular book list 
 - Register page
 - Login page
 - Book review submission page
-- Book review edit page
 - My Reviews
 
 ### Mockups
 
 [Home page]
 
-![Home_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/a8d832be-0d0e-4893-80d9-c3145d171a18)
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/b33c67a8-786a-4095-ba71-04b93bf03bab) 
 
 
 [Books listing page]
 
-![Book_List_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/d6134a94-85fa-4e9b-af43-471258c01ed8)
-
-
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/95ec9f0b-160a-4d9a-ad3d-f2a2ef74eb35)
 
 [Book details page]
 
-![Book_Details](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/12ef7e4b-8ee0-41bc-8627-9285a647f43c)
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/e02e43b4-d46c-4b72-a1bc-7952c11311e0)
 
 
 [Register page]
 
-![SignUP_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/8c5c57bb-a6dc-4c2f-aa44-8ec7e8b60990)
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/9f62a63d-e4d5-4535-afb5-88337e29f7ae)
 
 
 
 [Login page]
 
 
-![Login_page](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/828cb48a-2e4d-4da2-8927-8c80a69976ca)
-
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/abb88aa8-c46b-4f5d-8671-040bf0615f61)
 
 
 
 [Book review submission page]
 
-![Add_Review](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/7d34f844-d920-401e-95cb-b6c15a674b96)
-
-
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/671a6ec2-59e7-4c42-b0df-21cd83e718e6)
 
 
 [My reviews ]
 
 
-![My_Review](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/01d5967f-85a8-42d4-93f3-2dc8118bbe39)
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/03025c63-3766-4bb0-807a-13bd3de9869c)
 
 
 
+[Search result page]
 
-[Edit review page]
+
+![image](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/2f9c7884-376c-4939-8d9b-74c8d2d52e96)
 
 
-![Edit_review](https://github.com/amyliu1437/capstone-bookreview/assets/45413051/ab8f1192-0b80-48d1-ae5e-60eeee8fa7cf)
 
 
 
 ### Data
 
-- Users: user_id, username, email, password,token
-- Books: book_id, title, author, cover, publisher, summary
-- Reviews: review_id, user_id, book_id, stars, review_time, title, content
+- Users: user_id, username, email, password
+- Books: book_id, title, author, genre, synopsis
+- Reviews: review_id, user_id, book_id, rating, review_text
 
 ### Endpoints
 
-- GET /books: Retrieve a list of books with optional filters.
-- GET /books/:bookid: Retrieve detailed information about a specific book.
-- GET /books/topbooks: Retrieve top 8 books with highest rating stars.
-- GET /books/:bookid/reviews: Retrieve all the reviews to a singal book.
+- GET /books: Retrieve a list of all books.
+- GET /books/topbooks: Retrieve a list of  top rated books.
+- GET /books/:id: Retrieve detailed information about a specific book.
+- GET /books/:id/reviews: Retrieve a list of reviews about a specific book.
 - POST /reviews: Submit a review for a book.
-- GET /reviews/latestreview: Retrieve the latest review together with book information on the website.
-- GET /reviews/:reviewid: Retrieve a single review item for editing input.
-- PUT /reviews/:reviewid: Edit one exist review.
-- DELETE /reviews/:reviewid: Delete one review item by id.
-- GET /users/:id: Retrieve a single user information.
+- PUT /reviews/:id: Edit a review.
+- DELETE /reviews/:id: Delete a review from list.
 - GET /users/:id/reviews: Retrieve a list of reviews submitted by the user.
 - POST /users/register`: Register a new user.
 - POST /users/login`: Log in an existing user
@@ -183,7 +144,7 @@ JWT tokens will be stored in localStorage.
 6. Deploy client and server projects for production use.
 7. Conduct testing and bug fixes to ensure a seamless user experience.
 8. Develop user registration and login functionality.
-9. Explore additional features such as pagination options.
+9. Explore additional features such as pagin and search options.
 
 ## Nice-to-haves
 

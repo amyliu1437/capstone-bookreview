@@ -1,0 +1,141 @@
+@import '../../styles/global';
+
+.edit-page{
+  width: 100%;
+  margin: 0;
+  padding: 32px 16px;
+  @include tablet{
+    padding: 0 3rem;
+    }
+    @include desktop{
+      padding: 0 10%;
+    }
+}
+
+.edit-review{
+  display: flex;
+  flex-direction: column;
+
+  &__title{
+    margin: 8px 10px;
+    font-weight: bold;
+    font-size: 25px;
+    color:$primeBlack;
+  }
+  &__content{
+    display: flex;
+    flex-direction: column;
+    background-color: $primeWhite;
+    margin-bottom: 32px;
+
+    @include tablet{
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+  }
+
+  &__form{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+    @include tablet{
+      width: 65%;
+      align-self: flex-start;
+    }
+  }
+}
+
+.edit-book-info{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $secondaryMercury;
+  padding: 16px;
+
+  @include tablet{
+    width: 30%;
+    border-bottom:none;
+  }
+
+  &__image{
+    width: 80%;
+    align-self: center;
+    
+
+    @include tablet{
+      width: 100%;
+    }
+
+  }
+}
+
+.edit-form{
+  display: flex;
+  flex-direction: column;
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  &__label {
+    margin-bottom: 0.5rem;
+  }
+
+  &__input{
+    margin-bottom: 1rem;
+    border: 1px solid $secondaryMercury;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: inherit;
+    height: 5rem;
+    
+    @include tablet{
+      height: 30rem;
+    }
+
+    &::-webkit-input-placeholder{
+      color: $primeBlack;
+     }
+    &:focus{
+      border: 2px solid $secondaryDarkBlue;
+      outline: none;
+     }
+
+  }
+
+  &__tip{
+  margin: 0;
+  font-size: 1rem;
+  }
+
+  &__controller{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+
+  &__button{
+    background-color: $primeBlue;
+    width: 50%;
+    color:$primeWhite;
+    border: 1px solid $secondaryMercury;
+    border-radius: 4px;
+    height: 36px;
+    font-weight: 600;
+    line-height: 36px;
+
+  }
+
+  &__error {
+    display: inline-block;
+    color: red;
+  }
+
+  &__hidden {
+    display: none;
+  }
+}

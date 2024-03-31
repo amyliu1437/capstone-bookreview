@@ -1,0 +1,114 @@
+@import '../../styles/global';
+
+
+.section-container{
+  width: 100%;
+  margin: 0;
+  padding:32px 16px;
+  border-bottom: 1px solid $secondaryMercury;
+  @include tablet{
+    padding: 2rem;
+  }
+}
+
+.latest-review{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  
+  @include tablet{
+    flex-direction: row;
+    justify-content: space-between;
+      
+  }
+  &__left{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+
+    @include tablet{
+      text-align:left;
+      
+    }
+  }
+
+  &__right{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 16px;
+    @include tablet{
+      justify-content: right;
+    }
+  }
+
+  &__image{
+    width: 80%;
+    border: 1px solid $secondaryMercury;
+    border-radius: 0.5rem;
+
+  }
+  &__title{
+    color: $primeBlue;
+    font-size: 1rem;
+    font-weight: bold;
+
+    @include tablet{
+      font-size:1.13rem;
+    }
+
+  }
+  
+  &__link{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+
+    @include tablet{
+      width: 40%;
+      justify-content: flex-start;
+    }
+  }
+  &__button{
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-decoration: none;
+    background-color: $primeBlue;
+    color: $primeWhite;
+    border: 1px solid $secondaryMercury;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+.review-items{
+
+  display: flex;
+  flex-direction:column;
+
+  @include tablet{
+    align-items: flex-start; 
+    width: 100%;
+  }
+
+ &__title{
+   font-size: 1.25rem;
+   font-weight: 600;
+   margin: 1rem 0;
+ }
+
+ &__content{
+  color: $primeBlack;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  @include tablet{
+    font-size: 1.13rem;
+    line-height: 1.4rem;
+  }
+}
+}

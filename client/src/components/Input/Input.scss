@@ -1,0 +1,31 @@
+@import '../../styles/global';
+.input-section {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        margin-bottom: 0.5rem;
+    }
+
+    &__input {
+        margin-bottom: 1rem;
+        border: 1px solid $primeBlack;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        font-size: inherit;
+
+        &:focus{
+            border: 2px solid $secondaryDarkBlue;
+            outline: none;
+        }
+    }
+
+    &__error {
+        display: inline-block;
+        color: red;
+    }
+
+    &__hidden {
+        display: none;
+    }
+}
